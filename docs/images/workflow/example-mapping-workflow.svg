@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="180" viewBox="0 0 1060 180">
+  <style>
+    .title  { font: 700 18px 'Segoe UI', system-ui, sans-serif; fill: #1B2B3B; }
+    .box    { fill: #EEF4FF; stroke: #2558C4; stroke-width: 1.5; }
+    .box-export { fill: #E8F8F5; stroke: #0E7490; stroke-width: 1.5; }
+    .num    { font: 700 10px 'Segoe UI', system-ui, sans-serif; letter-spacing: 0.06em; fill: #2558C4; }
+    .num-export { font: 700 10px 'Segoe UI', system-ui, sans-serif; letter-spacing: 0.06em; fill: #0E7490; }
+    .lbl    { font: 600 13px 'Segoe UI', system-ui, sans-serif; fill: #1B2B3B; }
+    .note   { font: 12px 'Segoe UI', system-ui, sans-serif; fill: #5B6E82; }
+    .arrow  { stroke: #2558C4; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="ah" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2558C4"/>
+    </marker>
+  </defs>
+
+  <text class="title" x="20" y="28">AI-Map Mapping Workflow</text>
+
+  <!-- 1. Ingest -->
+  <rect class="box" x="20" y="48" width="175" height="96" rx="5"/>
+  <text class="num"  x="34" y="68">01</text>
+  <text class="lbl"  x="34" y="87">Ingest</text>
+  <text class="note" x="34" y="106">Codes, descriptions</text>
+  <text class="note" x="34" y="122">&amp; metadata</text>
+
+  <line class="arrow" x1="195" y1="96" x2="217" y2="96" marker-end="url(#ah)"/>
+
+  <!-- 2. AI Auto-Match -->
+  <rect class="box" x="219" y="48" width="175" height="96" rx="5"/>
+  <text class="num"  x="233" y="68">02</text>
+  <text class="lbl"  x="233" y="87">AI Auto-Match</text>
+  <text class="note" x="233" y="106">SNOMED CT or LOINC</text>
+  <text class="note" x="233" y="122">concept candidates</text>
+
+  <line class="arrow" x1="394" y1="96" x2="416" y2="96" marker-end="url(#ah)"/>
+
+  <!-- 3. Review -->
+  <rect class="box" x="418" y="48" width="175" height="96" rx="5"/>
+  <text class="num"  x="432" y="68">03</text>
+  <text class="lbl"  x="432" y="87">Review</text>
+  <text class="note" x="432" y="106">Approve, reject or</text>
+  <text class="note" x="432" y="122">defer each mapping</text>
+
+  <line class="arrow" x1="593" y1="96" x2="615" y2="96" marker-end="url(#ah)"/>
+
+  <!-- 4. Publish -->
+  <rect class="box" x="617" y="48" width="175" height="96" rx="5"/>
+  <text class="num"  x="631" y="68">04</text>
+  <text class="lbl"  x="631" y="87">Publish</text>
+  <text class="note" x="631" y="106">Versioned ConceptMap</text>
+  <text class="note" x="631" y="122">to FHIR endpoint</text>
+
+  <line class="arrow" x1="792" y1="96" x2="814" y2="96" marker-end="url(#ah)"/>
+
+  <!-- 5. Export (teal = delivery to clinical systems) -->
+  <rect class="box-export" x="816" y="48" width="175" height="96" rx="5"/>
+  <text class="num-export" x="830" y="68">05</text>
+  <text class="lbl"        x="830" y="87">Export</text>
+  <text class="note"       x="830" y="106">Deploy to LIS / EMR</text>
+  <text class="note"       x="830" y="122">for clinical use</text>
+</svg>

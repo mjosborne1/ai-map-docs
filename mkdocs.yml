@@ -1,0 +1,41 @@
+site_name: AI-Map
+site_description: Mapping Local Code Systems to SNOMED CT and LOINC
+site_author: AI-Map Team, AEHRC, CSIRO
+site_url: https://mjosborne1.github.io/ai-map-docs/
+
+theme:
+  name: material
+  logo: images/csiro-logo-small.png
+  favicon: images/csiro-logo-small.png
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  font: false
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Introduction: index.md
+  - Mapping Workflow:
+    - Overview: mapping-workflow.md
+    - Getting Started: workflow/getting-started.md
+    - Loading Source Terms: workflow/loading-source.md
+    - AI Auto-Mapping: workflow/auto-mapping.md
+    - Reviewing Mappings: workflow/reviewing-mappings.md
+    - Version Management & Review: workflow/version-management.md
+    - Updating Source Data: workflow/updating-source.md
+    - Exporting: workflow/exporting.md
+  - Target Code Systems: code-systems.md
+  - Appendix: appendix.md
+
+copyright: "© 2026 Australian e-Health Research Centre, CSIRO"
