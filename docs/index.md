@@ -10,3 +10,6 @@ Typical targets include:
 
 The goal of this documentation is to provide an operational guide to the mapping workflow,
 data quality expectations, and governance practices.
+
+!!! info "Documentation version"
+    This documentation aligns with **AI-Map 0.7.0**.

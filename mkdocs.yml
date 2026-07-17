@@ -21,6 +21,9 @@ theme:
     - content.code.copy
   font: false
 
+markdown_extensions:
+  - admonition
+
 extra_css:
   - stylesheets/extra.css
 
@@ -36,6 +39,7 @@ nav:
     - Updating Source Data: workflow/updating-source.md
     - Exporting: workflow/exporting.md
   - Target Code Systems: code-systems.md
+  - Administration: administration.md
   - Appendix: appendix.md
 
 copyright: "© 2026 Australian e-Health Research Centre, CSIRO"

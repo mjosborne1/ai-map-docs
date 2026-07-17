@@ -12,6 +12,45 @@ Use the filter tabs to work through one relationship type at a time, or use the 
 
 ---
 
+## Choosing which columns to display
+
+The mapping table can show a lot of information, and not every column is useful for every project. Use the **column selector** — the columns icon at the top-right of the table, next to the search box — to control which columns are displayed.
+
+![Column display selection](../images/workflow/47-ColumnDisplaySelection.png)
+
+*The column selector lets you show or hide columns. Tick or untick a column to toggle it. Standard columns (Target Code, Display, Conf., Notes, Flag, Binding, Relationship, Status, Author/Reviewer) can be turned on or off, and any source columns from your uploaded data (e.g. Specimen_Type, Units, Panel_Code, Panel_Name) can be shown alongside them for context.*
+
+Hiding columns you don't need makes the table easier to scan, especially when working with wide source data or on smaller screens.
+
+---
+
+## Sorting the table
+
+Click a column header to sort the table by that column. Most columns are sortable — including **Source Code**, **Description**, and any user-defined source columns (e.g. Panel_Name) — as well as **Target Code**, **Display**, and **Conf.** The sort icon (↕) next to each header indicates a sortable column; click to sort ascending, click again to reverse. The active sort column is highlighted.
+
+![Sorting columns](../images/workflow/48-SortingColumns.png)
+
+*Column headers show a sort icon. Text columns sort alphanumerically and numeric columns (such as Conf.) sort by value. The highlighted **Conf.** header indicates the table is currently sorted by confidence.*
+
+Sorting alphanumerically by Source Code or Description makes it easy to locate a specific term, while sorting by confidence helps you review the lowest-confidence matches first.
+
+---
+
+## Binding indicator
+
+The **Binding** column shows whether each mapped target code falls within the value set bound to the map. Hover over an indicator to see its explanation.
+
+![Binding indicator](../images/workflow/49-BindingIndicator.png)
+
+*The Binding column indicates how the mapped code relates to the bound value set:*
+
+- ✅ **Green tick** — the code is within the bound value set (e.g. *"Code is within the bound valueset"* / in the SPIA binding).
+- ⚠️ **Orange warning** — the code is outside the primary bound value set but found in a broader secondary set.
+
+Use the binding indicator to confirm that mapped targets conform to the intended value set, and to spot mappings that may need review because they fall outside it.
+
+---
+
 ## Editing a mapping
 
 The **Edit Mapping** panel shows the source columns for context and a live search against the target code system.

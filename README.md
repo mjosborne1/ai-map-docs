@@ -10,13 +10,13 @@ Basic DocBook documentation site for the AI-Map application.
 brew install docbook-xsl
 ```
 
-2. Build docs:
+1. Build docs:
 
 ```bash
 make build
 ```
 
-3. Open `site/index.html` in a browser.
+1. Open `site/index.html` in a browser.
 
 ## Docs Source
 
