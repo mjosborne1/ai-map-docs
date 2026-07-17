@@ -466,6 +466,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#filtering-by-confidence-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filtering by confidence level
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -628,6 +639,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../appendix/" class="md-nav__link">
         
   
@@ -696,6 +734,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#filtering-by-confidence-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filtering by confidence level
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -731,6 +780,16 @@
 <p><em>In this example: 41 codes attempted, 35 matched successfully (set to Inexact for review), 6 returned no match.</em></p>
 <p><strong>No match</strong> entries show the exact query sent to the API. Common causes are highly abbreviated local codes (e.g. <code>WBC</code>, <code>RBC</code>) where the description alone is not enough context — these will need to be mapped manually. See <a href="../../appendix/#troubleshooting">Troubleshooting</a> for API error codes.</p>
 <p>Click <strong>Close</strong> to return to the mapping table and begin review.</p>
+<hr />
+<h2 id="filtering-by-confidence-level">Filtering by confidence level</h2>
+<p>Once automap has run, use the <strong>Conf.</strong> filter in the toolbar to focus on mappings by their confidence score. Choose <code>&lt;</code> or <code>&gt;</code> from the operator dropdown, enter a percentage, and the table shows only the matching rows. Click the <strong>×</strong> to clear the filter.</p>
+<p><img alt="Confidence level filter" src="../../images/workflow/50-ConfidenceLevelFilter.png" /></p>
+<p><em>The confidence filter set to <code>&lt; 85%</code>, showing only the codes that were not confidently auto-mapped — these are the mappings that most need manual review.</em></p>
+<p>Two common ways to use this filter:</p>
+<ul>
+<li><strong>Find low-confidence matches</strong> — set <code>&lt; 85%</code> to quickly see everything that automap was unsure about. 85% is a reasonable threshold: it surfaces the codes that need a closer look while hiding the strong matches.</li>
+<li><strong>Find high-confidence matches for bulk approval</strong> — set <code>&gt; 90%</code> to isolate the strongest matches, then use a <a href="../version-management/#bulk-actions-during-review">bulk action</a> to set them all to <strong>Equivalent</strong> and <strong>Mapped</strong> in one step.</li>
+</ul>
 
 
 

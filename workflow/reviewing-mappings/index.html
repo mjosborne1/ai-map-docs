@@ -484,6 +484,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#choosing-which-columns-to-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing which columns to display
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorting-the-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sorting the table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binding-indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binding indicator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#editing-a-mapping" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -650,6 +683,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../appendix/" class="md-nav__link">
         
   
@@ -701,6 +761,39 @@
     <span class="md-ellipsis">
       
         The mapping table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-which-columns-to-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing which columns to display
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorting-the-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sorting the table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binding-indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binding indicator
       
     </span>
   </a>
@@ -763,6 +856,28 @@
 <p>Use the filter tabs to work through one relationship type at a time, or use the keyboard shortcuts shown in the toolbar to navigate and set relationships without opening the edit panel.</p>
 <p><img alt="Mapping table after automap" src="../../images/workflow/15-EditMappingfromTable.png" /></p>
 <p><em>The table after automap. <code>WBC</code> and <code>RBC</code> have no target yet; <code>HEB</code> has been matched to LOINC <code>718-7</code> (Haemoglobin) at 85% confidence. Click the </em><em>Edit</em><em> button or press <code>e</code> to open the edit panel.</em></p>
+<hr />
+<h2 id="choosing-which-columns-to-display">Choosing which columns to display</h2>
+<p>The mapping table can show a lot of information, and not every column is useful for every project. Use the <strong>column selector</strong> — the columns icon at the top-right of the table, next to the search box — to control which columns are displayed.</p>
+<p><img alt="Column display selection" src="../../images/workflow/47-ColumnDisplaySelection.png" /></p>
+<p><em>The column selector lets you show or hide columns. Tick or untick a column to toggle it. Standard columns (Target Code, Display, Conf., Notes, Flag, Binding, Relationship, Status, Author/Reviewer) can be turned on or off, and any source columns from your uploaded data (e.g. Specimen_Type, Units, Panel_Code, Panel_Name) can be shown alongside them for context.</em></p>
+<p>Hiding columns you don't need makes the table easier to scan, especially when working with wide source data or on smaller screens.</p>
+<hr />
+<h2 id="sorting-the-table">Sorting the table</h2>
+<p>Click a column header to sort the table by that column. Most columns are sortable — including <strong>Source Code</strong>, <strong>Description</strong>, and any user-defined source columns (e.g. Panel_Name) — as well as <strong>Target Code</strong>, <strong>Display</strong>, and <strong>Conf.</strong> The sort icon (↕) next to each header indicates a sortable column; click to sort ascending, click again to reverse. The active sort column is highlighted.</p>
+<p><img alt="Sorting columns" src="../../images/workflow/48-SortingColumns.png" /></p>
+<p><em>Column headers show a sort icon. Text columns sort alphanumerically and numeric columns (such as Conf.) sort by value. The highlighted </em><em>Conf.</em><em> header indicates the table is currently sorted by confidence.</em></p>
+<p>Sorting alphanumerically by Source Code or Description makes it easy to locate a specific term, while sorting by confidence helps you review the lowest-confidence matches first.</p>
+<hr />
+<h2 id="binding-indicator">Binding indicator</h2>
+<p>The <strong>Binding</strong> column shows whether each mapped target code falls within the value set bound to the map. Hover over an indicator to see its explanation.</p>
+<p><img alt="Binding indicator" src="../../images/workflow/49-BindingIndicator.png" /></p>
+<p><em>The Binding column indicates how the mapped code relates to the bound value set:</em></p>
+<ul>
+<li>✅ <strong>Green tick</strong> — the code is within the bound value set (e.g. <em>"Code is within the bound valueset"</em> / in the SPIA binding).</li>
+<li>⚠️ <strong>Orange warning</strong> — the code is outside the primary bound value set but found in a broader secondary set.</li>
+</ul>
+<p>Use the binding indicator to confirm that mapped targets conform to the intended value set, and to spot mappings that may need review because they fall outside it.</p>
 <hr />
 <h2 id="editing-a-mapping">Editing a mapping</h2>
 <p>The <strong>Edit Mapping</strong> panel shows the source columns for context and a live search against the target code system.</p>

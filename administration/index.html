@@ -12,13 +12,13 @@
         <meta name="author" content="AI-Map Team, AEHRC, CSIRO">
       
       
-        <link rel="canonical" href="https://mjosborne1.github.io/ai-map-docs/code-systems/">
+        <link rel="canonical" href="https://mjosborne1.github.io/ai-map-docs/administration/">
       
       
-        <link rel="prev" href="../workflow/exporting/">
+        <link rel="prev" href="../code-systems/">
       
       
-        <link rel="next" href="../administration/">
+        <link rel="next" href="../appendix/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Target Code Systems - AI-Map</title>
+        <title>Administration - AI-Map</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#target-code-systems" class="md-skip">
+        <a href="#administration" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Target Code Systems
+              Administration
             
           </span>
         </div>
@@ -527,6 +527,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Target Code Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -546,7 +573,7 @@
   <span class="md-ellipsis">
     
   
-    Target Code Systems
+    Administration
   
 
     
@@ -564,7 +591,7 @@
   <span class="md-ellipsis">
     
   
-    Target Code Systems
+    Administration
   
 
     
@@ -590,32 +617,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#snomed-ct" class="md-nav__link">
+  <a href="#clearing-the-concept-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SNOMED CT
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loinc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LOINC
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#general-mapping-guidance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        General Mapping Guidance
+        Clearing the concept cache
       
     </span>
   </a>
@@ -626,33 +631,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../administration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Administration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -711,32 +689,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#snomed-ct" class="md-nav__link">
+  <a href="#clearing-the-concept-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SNOMED CT
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loinc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LOINC
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#general-mapping-guidance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        General Mapping Guidance
+        Clearing the concept cache
       
     </span>
   </a>
@@ -760,54 +716,14 @@
 
 
 
-<h1 id="target-code-systems">Target Code Systems</h1>
-<h2 id="snomed-ct">SNOMED CT</h2>
-<p>SNOMED CT is used as the primary reference terminology for clinical concepts,
-diagnoses, procedures, and findings.</p>
-<p>Concept identifiers are stable numeric SCTIDs. Example:</p>
-<pre><code class="language-text">26604007 | Complete blood count |
-</code></pre>
-<h2 id="loinc">LOINC</h2>
-<p>LOINC is used for lab tests and clinical observations where standardized naming
-and interoperability are required.</p>
-<p>Codes are alphanumeric. Example:</p>
-<pre><code class="language-text">2093-3  Cholesterol [Mass/volume] in Serum or Plasma
-</code></pre>
-<h2 id="general-mapping-guidance">General Mapping Guidance</h2>
-<ul>
-<li>Prefer exact semantic equivalence where possible.</li>
-<li>Document assumptions when post-coordination or partial matches are used.</li>
-<li>Record provenance — mapper ID, review date, and source version — for each approved mapping decision.</li>
-<li>
-<p>Assign the relationship type explicitly:</p>
-<table>
-<thead>
-<tr>
-<th>Relationship type</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Equivalent</td>
-<td>Source and target have the same meaning.</td>
-</tr>
-<tr>
-<td>Broader</td>
-<td>The target covers more than the source term (e.g. local code "fasting glucose" mapped to LOINC "Glucose [Moles/volume] in Blood").</td>
-</tr>
-<tr>
-<td>Narrower</td>
-<td>The target is more specific than the source term (e.g. local code "chest pain" mapped to SNOMED CT "Pleuritic chest pain").</td>
-</tr>
-<tr>
-<td>No map</td>
-<td>No meaningful relationship exists between source and target.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
+<h1 id="administration">Administration</h1>
+<p>Administrative functions are available to users with the <strong>Admin</strong> role. Open the <strong>User Administration</strong> dialog from the toolbar to manage users and perform maintenance tasks.</p>
+<h2 id="clearing-the-concept-cache">Clearing the concept cache</h2>
+<p>AI-Map caches terminology lookups (concept displays, properties, and value set membership) to speed up automap and the mapping table. If the underlying terminology server is updated — for example when a code system version changes or a concept is retired — the cache can hold stale results.</p>
+<p>Click <strong>Clear Concept Cache</strong> in the User Administration dialog to purge all cached terminology lookups. Subsequent lookups are re-fetched fresh from the terminology server.</p>
+<p><img alt="Clear Concept Cache button in User Administration" src="../images/workflow/51-AdminClearConceptCache.png" /></p>
+<p><em>The </em><em>Clear Concept Cache</em><em> button in the User Administration dialog purges stale terminology lookups. Use it after a terminology server update, or if displays or value set membership appear out of date.</em></p>
+<p>Clearing the cache is safe: it does not affect any mappings, project data, or user accounts. The first few lookups after clearing may be slightly slower while the cache is repopulated.</p>
 
 
 
@@ -843,7 +759,7 @@ and interoperability are required.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../workflow/exporting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exporting">
+          <a href="../code-systems/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Target Code Systems">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -853,20 +769,20 @@ and interoperability are required.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Exporting
+                Target Code Systems
               </div>
             </div>
           </a>
         
         
           
-          <a href="../administration/" class="md-footer__link md-footer__link--next" aria-label="Next: Administration">
+          <a href="../appendix/" class="md-footer__link md-footer__link--next" aria-label="Next: Appendix">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Administration
+                Appendix
               </div>
             </div>
             <div class="md-footer__button md-icon">
