@@ -501,6 +501,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#project-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project roles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#audit-history" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -549,6 +560,17 @@
     <span class="md-ellipsis">
       
         Marking as reviewed and finalising
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archiving-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archiving a project
       
     </span>
   </a>
@@ -735,6 +757,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#project-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project roles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#audit-history" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -789,6 +822,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#archiving-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archiving a project
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -807,6 +851,36 @@
 
 
 <h1 id="version-management-review">Version Management &amp; Review</h1>
+<h2 id="project-roles">Project roles</h2>
+<p>Access to a project is controlled by per-project roles, assigned from the <strong>Members</strong> panel:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Can do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Owner</strong></td>
+<td>Everything — edit mappings, run automap, upload, manage members, finalise versions, delete or archive the project.</td>
+</tr>
+<tr>
+<td><strong>Author</strong></td>
+<td>Read and edit mappings (relationship, target overrides, note, reasoning, flag), run automap, upload source files. Cannot set a mapping's status to a reviewer-only value.</td>
+</tr>
+<tr>
+<td><strong>Reviewer</strong></td>
+<td>Read and export everything; can change a mapping's status (e.g. Draft → Mapped) but not its relationship, target overrides, note, or reasoning.</td>
+</tr>
+<tr>
+<td><strong>Reader</strong></td>
+<td>Read-only — can view mappings, versions, exports, the audit history, and concept lookups, but cannot edit a mapping, run automap, upload a file, or post a comment.</td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong>Reader</strong> for stakeholders who need visibility into a mapping project (e.g. a clinical sign-off contact) without the ability to change it.</p>
+<hr />
 <h2 id="audit-history">Audit history</h2>
 <p>Every change in AI-Map is logged. Click <strong>History</strong> in the toolbar to see the full audit trail for the project, including mapping edits, version status changes, and member additions.</p>
 <p><img alt="Project history" src="../../images/workflow/22-ViewMapHistory.png" /></p>
@@ -816,7 +890,7 @@
 <p>Before submitting a version for review, add the reviewer as a project member. Click <strong>Members</strong> in the toolbar.</p>
 <p><img alt="Members button in toolbar" src="../../images/workflow/23-AddingAReviewer.png" /></p>
 <p><em>Click the </em><em>Members</em><em> button to open the Project Members panel.</em></p>
-<p>Search for the reviewer by name or email address, confirm the <strong>Reviewer</strong> role is selected, and click <strong>Add</strong>.</p>
+<p>Search for the reviewer by name or email address, select the <strong>Reviewer</strong> role from the dropdown (Author, Reviewer, Reader, or Owner), and click <strong>Add</strong>.</p>
 <p><img alt="Add member dialog" src="../../images/workflow/24-AddingAReviewer2.jpg" /></p>
 <p><em>Search by at least 3 characters of the reviewer's name or email. Select </em><em>Reviewer</em><em> from the role dropdown before clicking </em><em>Add</em><em>.</em></p>
 <p>The reviewer now appears in the members list and has access to the project.</p>
@@ -855,6 +929,9 @@
 <p>The full lifecycle is visible in the History panel.</p>
 <p><img alt="History showing full lifecycle" src="../../images/workflow/34-HistoryShowingReviewedFinal.png" /></p>
 <p><em>The Versions tab in History shows the complete status progression: SUBMITTED → REVIEWED → FINAL, with the user and timestamp for each transition.</em></p>
+<hr />
+<h2 id="archiving-a-project">Archiving a project</h2>
+<p>Once a mapping project is complete and no longer needs to appear in the active project list, any project member can archive it. Archiving is reversible and non-destructive — it only hides the project from the default list view; no mappings, versions, or history are affected, and the project can be unarchived at any time to restore it to the list.</p>
 
 
 

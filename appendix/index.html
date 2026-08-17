@@ -642,6 +642,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cli-batch-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI batch mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#traceability" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -715,6 +726,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cli-batch-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI batch mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#traceability" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -771,6 +793,8 @@
 
 
 <h1 id="appendix">Appendix</h1>
+<h2 id="cli-batch-mode">CLI batch mode</h2>
+<p>For scripted, unattended pipelines, AI-Map also ships a headless CLI mode (<code>python main.py</code>) that reads a TSV of source codes, runs the same AI automap used by the web UI, and writes a result TSV — without needing a browser session or a project in the database. This is intended for automation and bulk pre-processing, not for review or governance; mappings produced this way still need to go through the normal project workflow (upload, review, finalise) if they are to be tracked and exported as a versioned ConceptMap. See the project <code>README.md</code> for the command-line flags.</p>
 <h2 id="traceability">Traceability</h2>
 <p>Every mapping action — automap runs, manual edits, version transitions, and member changes — is recorded in the project History with a timestamp and the authenticated user. This provides a full audit trail for governance and compliance purposes.</p>
 <p>The History panel is accessible from any project via the <strong>History</strong> button in the toolbar. Use the <strong>Mappings</strong>, <strong>Versions</strong>, and <strong>Members</strong> tabs to filter the log.</p>

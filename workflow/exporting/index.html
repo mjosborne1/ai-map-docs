@@ -567,6 +567,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#publishing-the-fhir-conceptmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing the FHIR ConceptMap
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -701,6 +712,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#publishing-the-fhir-conceptmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing the FHIR ConceptMap
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -758,6 +780,9 @@
 <p><img alt="Excel export" src="../../images/workflow/46-ExcelViewofV2Map.png" /></p>
 <p><em>Key columns in the export: Source Code, Description, additional source columns (Specimen Type, Units, etc.), Map Status, Target Code, System, Display, Confidence score, Match Quality, AI Reasoning, Author, Reviewed By, Flagged, and Active Target.</em></p>
 <p>This file is the primary handoff artefact for loading mappings into a LIS or EMR.</p>
+<h2 id="publishing-the-fhir-conceptmap">Publishing the FHIR ConceptMap</h2>
+<p>AI-Map does not push the ConceptMap to a FHIR server itself — the FHIR ConceptMap export is a file download only. To publish it to a terminology or FHIR server, download the <code>.json</code> export and upload it separately (e.g. <code>POST</code>/<code>PUT</code> it to the server's <code>ConceptMap</code> endpoint using <code>curl</code>, Postman, or your terminology server's own import tooling).</p>
+<p>For the export to contain complete <code>sourceUri</code>, <code>targetUri</code>, and <code>group.source</code> values, set the <strong>Source ValueSet URL</strong>, <strong>Source Code System URL</strong>, and <strong>Target ValueSet URL</strong> fields under <strong>FHIR ConceptMap URLs</strong> when creating or editing the project — see <a href="../getting-started/#creating-a-project">Getting Started</a>. Without these, the corresponding fields are omitted from the exported resource.</p>
 
 
 

@@ -778,14 +778,15 @@
 </tr>
 <tr>
 <td><strong>FHIR Context</strong></td>
-<td>The FHIR element the source codes will be bound to (e.g. <code>Pathology Result item</code>).</td>
+<td>The FHIR element the source codes will be bound to (e.g. <code>Pathology Result item</code>). Choose an existing context binding, or select <strong>Add your own…</strong> and supply a custom context URL. Use <strong>⚙ Manage context bindings…</strong> to add, edit, or reorder the presets offered here — any user can maintain this shared list.</td>
 </tr>
 <tr>
 <td><strong>Target Code System URL</strong></td>
-<td>The code system you are mapping to. Select a preset or enter a custom URL (e.g. <code>http://loinc.org</code>).</td>
+<td>The code system you are mapping to. Select a preset or enter a custom URL (e.g. <code>http://loinc.org</code>). Overrides the code system URL returned by the AI during automap.</td>
 </tr>
 </tbody>
 </table>
+<p>Expand <strong>▸ FHIR ConceptMap URLs</strong> to set the <code>sourceUri</code>, <code>group.source</code>, and <code>targetUri</code> values that will populate the project's FHIR <code>ConceptMap</code> export (Source ValueSet URL, Source Code System URL, Target ValueSet URL). These are optional for day-to-day mapping, but without them the exported ConceptMap will be missing its source/target URIs — set them here if the mapping will be uploaded to a FHIR server or terminology service. The Target ValueSet URL is pre-filled from the context binding when one is available.</p>
 <p>The project opens immediately, ready for source terms to be uploaded.</p>
 
 

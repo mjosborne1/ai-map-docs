@@ -617,6 +617,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#managing-user-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing user accounts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#clearing-the-concept-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -689,6 +700,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#managing-user-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing user accounts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#clearing-the-concept-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -718,6 +740,15 @@
 
 <h1 id="administration">Administration</h1>
 <p>Administrative functions are available to users with the <strong>Admin</strong> role. Open the <strong>User Administration</strong> dialog from the toolbar to manage users and perform maintenance tasks.</p>
+<p>Site-wide admin access (this page) is separate from the per-project <strong>Owner / Author / Reviewer / Reader</strong> roles described in <a href="../workflow/version-management/#project-roles">Project roles</a> — an admin can manage any user account, but still needs a project role to work on a specific mapping project.</p>
+<h2 id="managing-user-accounts">Managing user accounts</h2>
+<p>The <strong>User Administration</strong> dialog lists every user who has logged into AI-Map, with their name, email, login provider, and last login time. Search by name or email to find a specific user.</p>
+<p>For each user you can:</p>
+<ul>
+<li><strong>Disable / Enable</strong> the account — a disabled user cannot log in.</li>
+<li><strong>Grant / Remove admin</strong> — grants or revokes site-wide admin access.</li>
+</ul>
+<p>You cannot disable your own account or remove your own admin access, to prevent accidentally locking yourself out.</p>
 <h2 id="clearing-the-concept-cache">Clearing the concept cache</h2>
 <p>AI-Map caches terminology lookups (concept displays, properties, and value set membership) to speed up automap and the mapping table. If the underlying terminology server is updated — for example when a code system version changes or a concept is retired — the cache can hold stale results.</p>
 <p>Click <strong>Clear Concept Cache</strong> in the User Administration dialog to purge all cached terminology lookups. Subsequent lookups are re-fetched fresh from the terminology server.</p>
