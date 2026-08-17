@@ -742,16 +742,17 @@
 
 <h1 id="mapping-workflow">Mapping Workflow</h1>
 <h2 id="overview">Overview</h2>
-<p>The workflow moves a local code through five stages, from raw ingestion to a mapping published for use in a LIS or EMR. Each stage produces a defined output that feeds the next.</p>
+<p>The workflow moves a local code through six stages, from raw ingestion to a mapping published for use in a LIS or EMR (or, for a FHIR ConceptMap, on a terminology server). Each stage produces a defined output that feeds the next. Stages 1–5 happen inside AI-Map; stage 6 is a manual step performed outside it.</p>
 <ol>
 <li>Ingest local source codes, descriptions and metadata (units, specimen type, synonyms).</li>
 <li>AI auto-match to standard concepts (SNOMED CT or LOINC).</li>
 <li>Review proposed mappings.</li>
 <li>Publish approved mappings and version them.</li>
-<li>Export for use in LIS/EMR</li>
+<li>Export for use in LIS/EMR, or as a FHIR ConceptMap.</li>
+<li>Upload the ConceptMap to a FHIR server (manual step, outside AI-Map).</li>
 </ol>
 <p><img alt="Mapping workflow" src="../images/workflow/example-mapping-workflow.svg" /></p>
-<p><em>Example mapping workflow — replace with your project-specific diagram.</em></p>
+<p><em>Steps 1–5 (blue/teal) happen inside AI-Map. Step 6 (dashed) is manual — see <a href="../workflow/exporting/#publishing-the-fhir-conceptmap">Publishing the FHIR ConceptMap</a>.</em></p>
 <hr />
 <h2 id="step-by-step-guides">Step-by-step guides</h2>
 <table>
@@ -789,6 +790,10 @@
 <tr>
 <td>Export the completed mapping</td>
 <td><a href="../workflow/exporting/">Exporting</a></td>
+</tr>
+<tr>
+<td>Publish a FHIR ConceptMap to a terminology server (manual)</td>
+<td><a href="../workflow/exporting/#publishing-the-fhir-conceptmap">Publishing the FHIR ConceptMap</a></td>
 </tr>
 </tbody>
 </table>
