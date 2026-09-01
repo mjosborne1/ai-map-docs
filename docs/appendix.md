@@ -1,5 +1,9 @@
 # Appendix
 
+## CLI batch mode
+
+For scripted, unattended pipelines, AI-Map also ships a headless CLI mode (`python main.py`) that reads a TSV of source codes, runs the same AI automap used by the web UI, and writes a result TSV — without needing a browser session or a project in the database. This is intended for automation and bulk pre-processing, not for review or governance; mappings produced this way still need to go through the normal project workflow (upload, review, finalise) if they are to be tracked and exported as a versioned ConceptMap. See the project `README.md` for the command-line flags.
+
 ## Traceability
 
 Every mapping action — automap runs, manual edits, version transitions, and member changes — is recorded in the project History with a timestamp and the authenticated user. This provides a full audit trail for governance and compliance purposes.

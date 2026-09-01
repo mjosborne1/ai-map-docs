@@ -32,3 +32,9 @@ The Excel export contains one row per source code with all mapping metadata.
 *Key columns in the export: Source Code, Description, additional source columns (Specimen Type, Units, etc.), Map Status, Target Code, System, Display, Confidence score, Match Quality, AI Reasoning, Author, Reviewed By, Flagged, and Active Target.*
 
 This file is the primary handoff artefact for loading mappings into a LIS or EMR.
+
+## Publishing the FHIR ConceptMap
+
+AI-Map does not push the ConceptMap to a FHIR server itself — the FHIR ConceptMap export is a file download only. To publish it to a terminology or FHIR server, download the `.json` export and upload it separately (e.g. `POST`/`PUT` it to the server's `ConceptMap` endpoint using `curl`, Postman, or your terminology server's own import tooling).
+
+For the export to contain complete `sourceUri`, `targetUri`, and `group.source` values, set the **Source ValueSet URL**, **Source Code System URL**, and **Target ValueSet URL** fields under **FHIR ConceptMap URLs** when creating or editing the project — see [Getting Started](getting-started.md#creating-a-project). Without these, the corresponding fields are omitted from the exported resource.

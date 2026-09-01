@@ -2,6 +2,19 @@
 
 Administrative functions are available to users with the **Admin** role. Open the **User Administration** dialog from the toolbar to manage users and perform maintenance tasks.
 
+Site-wide admin access (this page) is separate from the per-project **Owner / Author / Reviewer / Reader** roles described in [Project roles](workflow/version-management.md#project-roles) — an admin can manage any user account, but still needs a project role to work on a specific mapping project.
+
+## Managing user accounts
+
+The **User Administration** dialog lists every user who has logged into AI-Map, with their name, email, login provider, and last login time. Search by name or email to find a specific user.
+
+For each user you can:
+
+- **Disable / Enable** the account — a disabled user cannot log in.
+- **Grant / Remove admin** — grants or revokes site-wide admin access.
+
+You cannot disable your own account or remove your own admin access, to prevent accidentally locking yourself out.
+
 ## Clearing the concept cache
 
 AI-Map caches terminology lookups (concept displays, properties, and value set membership) to speed up automap and the mapping table. If the underlying terminology server is updated — for example when a code system version changes or a concept is retired — the cache can hold stale results.

@@ -79,6 +79,27 @@ Add a note to record your reasoning, then click **Save**.
 
 ---
 
+## Viewing the concept hierarchy
+
+From the Edit Mapping panel, click **Hierarchy** to expand a tree of the selected target concept's immediate parents and children, fetched live from the terminology server. Click any parent or child to re-centre the tree on that concept, or click **Use** to set it as the mapping target without leaving the panel — useful when the AI-suggested concept is close but a sibling or parent is a better fit.
+
+The same hierarchy is available read-only from the concept info popover (click **Show hierarchy**) when you just want to explore relationships without changing the current mapping.
+
+---
+
+## Notes and discussion
+
+Each mapping row has a single **Notes & Discussion** icon that opens a panel combining the private mapper note with a threaded comment log. The icon is highlighted whenever a note or comment already exists on the row, so reviewers can spot rows with open questions at a glance.
+
+The panel has two parts:
+
+- **Mapper Note** — a free-text field for recording why a target was chosen; click **Save note** to update it.
+- **Discussion** — a comment thread for back-and-forth between the author and reviewer. Type a message and click **Post comment**; use **Reply** to respond to a specific comment, or **Edit**/**Delete** on your own comments. Comments support one level of replies.
+
+Readers can view notes and the discussion thread but cannot post, edit, or delete comments.
+
+---
+
 ## Completed mappings
 
 Work through all codes until the **Unmapped** count reaches zero.
@@ -91,7 +112,7 @@ Work through all codes until the **Unmapped** count reaches zero.
 
 ## Validating target codes
 
-Click **Validate** to check every mapped target code against the terminology server. This confirms that no target concept has been retired or made inactive since it was mapped.
+Click **Validate** to check every mapped target code against the terminology server. This confirms that no target concept has been retired or made inactive since it was mapped, and re-checks whether each target still falls within the project's bound value set (shown in the **Binding** column above).
 
 ![Validate button](../images/workflow/21-Validation.png)
 

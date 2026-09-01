@@ -1,5 +1,20 @@
 # Version Management & Review
 
+## Project roles
+
+Access to a project is controlled by per-project roles, assigned from the **Members** panel:
+
+| Role | Can do |
+| ---- | ------ |
+| **Owner** | Everything — edit mappings, run automap, upload, manage members, finalise versions, delete or archive the project. |
+| **Author** | Read and edit mappings (relationship, target overrides, note, reasoning, flag), run automap, upload source files. Cannot set a mapping's status to a reviewer-only value. |
+| **Reviewer** | Read and export everything; can change a mapping's status (e.g. Draft → Mapped) but not its relationship, target overrides, note, or reasoning. |
+| **Reader** | Read-only — can view mappings, versions, exports, the audit history, and concept lookups, but cannot edit a mapping, run automap, upload a file, or post a comment. |
+
+Use **Reader** for stakeholders who need visibility into a mapping project (e.g. a clinical sign-off contact) without the ability to change it.
+
+---
+
 ## Audit history
 
 Every change in AI-Map is logged. Click **History** in the toolbar to see the full audit trail for the project, including mapping edits, version status changes, and member additions.
@@ -18,7 +33,7 @@ Before submitting a version for review, add the reviewer as a project member. Cl
 
 *Click the **Members** button to open the Project Members panel.*
 
-Search for the reviewer by name or email address, confirm the **Reviewer** role is selected, and click **Add**.
+Search for the reviewer by name or email address, select the **Reviewer** role from the dropdown (Author, Reviewer, Reader, or Owner), and click **Add**.
 
 ![Add member dialog](../images/workflow/24-AddingAReviewer2.jpg)
 
@@ -95,3 +110,19 @@ The full lifecycle is visible in the History panel.
 ![History showing full lifecycle](../images/workflow/34-HistoryShowingReviewedFinal.png)
 
 *The Versions tab in History shows the complete status progression: SUBMITTED → REVIEWED → FINAL, with the user and timestamp for each transition.*
+
+---
+
+## Archiving a project
+
+Once a mapping project is complete, or otherwise doesn't need to stay in your main project list, click **Archive** on its card to hide it. Archiving does not lock or otherwise change the project — mappings can still be opened and edited normally, versions can still be submitted and finalised, and nothing is deleted. It only affects whether the project appears in the default list.
+
+![Archive button on a project card](../images/workflow/52-ArchiveProject.png)
+
+*Click **Archive** on a project card to hide it from the default project list.*
+
+To see archived projects again, switch on **Show archived** in the toolbar. Archived projects reappear in the list with an **Archived** badge, and their **Archive** button becomes **Unarchive**.
+
+![Show archived toggle](../images/workflow/53-ShowArchivedProjects.png)
+
+*With **Show archived** on, the archived **OurLab Haematology Results** project is shown with an **Archived** badge and an **Unarchive** button. Click **Unarchive** to return it to the default list.*

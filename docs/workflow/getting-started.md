@@ -42,7 +42,9 @@ Fill in the project details and click **Create**.
 | ----- | ----------- |
 | **Name** | A short identifier for the project (e.g. `OurLab Haematology Results`). |
 | **Description** | A human-readable summary (e.g. `OurLab Haematology Results to LOINC`). |
-| **FHIR Context** | The FHIR element the source codes will be bound to (e.g. `Pathology Result item`). |
-| **Target Code System URL** | The code system you are mapping to. Select a preset or enter a custom URL (e.g. `http://loinc.org`). |
+| **FHIR Context** | The FHIR element the source codes will be bound to (e.g. `Pathology Result item`). Choose an existing context binding, or select **Add your own…** and supply a custom context URL. Use **⚙ Manage context bindings…** to add, edit, or reorder the presets offered here — any user can maintain this shared list. |
+| **Target Code System URL** | The code system you are mapping to. Select a preset or enter a custom URL (e.g. `http://loinc.org`). Overrides the code system URL returned by the AI during automap. |
+
+Expand **▸ FHIR ConceptMap URLs** to set the `sourceUri`, `group.source`, and `targetUri` values that will populate the project's FHIR `ConceptMap` export (Source ValueSet URL, Source Code System URL, Target ValueSet URL). These are optional for day-to-day mapping, but without them the exported ConceptMap will be missing its source/target URIs — set them here if the mapping will be uploaded to a FHIR server or terminology service. The Target ValueSet URL is pre-filled from the context binding when one is available.
 
 The project opens immediately, ready for source terms to be uploaded.
