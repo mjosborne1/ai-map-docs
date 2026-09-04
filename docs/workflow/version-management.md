@@ -85,6 +85,31 @@ Reviewers can select multiple rows and apply a relationship type or mapped statu
 
 ---
 
+## Discussing a mapping with the reviewer
+
+Review is rarely a single pass — a reviewer often needs to question a particular mapping rather than send the whole version back. The **Notes & Discussion** panel on each row is where that conversation happens, so the reasoning stays attached to the mapping it concerns instead of living in email.
+
+Open it with the comment icon in the mapping table. The icon is highlighted, and its tooltip shows a count, whenever the row already has a note or comments — so you can scan a version for rows that need attention before working through them.
+
+![Row with a note and comment](../images/workflow/54-ReviewNote.png)
+
+*The HIV row shows a highlighted comment icon with the tooltip **Note / 1 comment(s)**, indicating this mapping already has a mapper note and one comment. Rows with no discussion show a plain, unhighlighted icon.*
+
+Clicking the icon opens the panel, which combines the mapper's note with the threaded discussion.
+
+![Notes & Discussion panel](../images/workflow/55-Mapper-Reviewer-Discussion.png)
+
+*The **Mapper Note** at the top records the author's reasoning for the mapping — here, `No 'O' in our assay`. Below it, **Discussion** shows the reviewer's reply (`Yes there is`) with their name and timestamp. Use **Reply** to respond within the thread, or **Edit** / **Delete** on your own comments.*
+
+The two parts serve different purposes:
+
+- **Mapper Note** — the author's record of why a target was chosen. Edit the text and click **Save note** to update it. Only Owners and Authors can change it; Reviewers and Readers see it read-only.
+- **Discussion** — the back-and-forth between author and reviewer. Type a message and click **Post comment**. Comments support one level of replies, and each is stamped with the author's name and time. Owners, Authors, and Reviewers can post; **Readers can view the thread but cannot post, edit, or delete comments.**
+
+Because comments are timestamped and attributed, the thread doubles as a record of why a contested mapping was settled the way it was. Notes and comments persist after a version is marked final, so the discussion stays available as provenance for the finalised map — but an unanswered question also stays visible. Work through the rows with highlighted comment icons and resolve any outstanding discussion before marking the version reviewed.
+
+---
+
 ## Marking as reviewed and finalising
 
 Once the reviewer is satisfied, they click **Mark Reviewed**. The version status moves to **Reviewed**.

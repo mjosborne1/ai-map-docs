@@ -98,6 +98,8 @@ The panel has two parts:
 
 Readers can view notes and the discussion thread but cannot post, edit, or delete comments.
 
+See [Discussing a mapping with the reviewer](version-management.md#discussing-a-mapping-with-the-reviewer) for a worked example of an author and reviewer using this panel during review.
+
 ---
 
 ## Completed mappings
