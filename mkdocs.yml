@@ -23,6 +23,7 @@ theme:
 
 markdown_extensions:
   - admonition
+  - pymdownx.betterem
 
 extra_css:
   - stylesheets/extra.css

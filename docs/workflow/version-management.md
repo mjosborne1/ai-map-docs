@@ -35,15 +35,15 @@ Before submitting a version for review, add the reviewer as a project member. Cl
 
 Search for the reviewer by name or email address, select the **Reviewer** role from the dropdown (Author, Reviewer, Reader, or Owner), and click **Add**.
 
-![Add member dialog](../images/workflow/24-AddingAReviewer2.jpg)
+![Add member dialog](../images/workflow/24-AddingAReviewer2.png)
 
-*Search by at least 3 characters of the reviewer's name or email. Select **Reviewer** from the role dropdown before clicking **Add**.*
+*The Project Members panel lists existing members and their roles at the top — here just the project **Owner**. Type at least 3 characters of the reviewer's name or email into **Add member**; the matching user appears below the search box. Select **Reviewer** from the role dropdown, then click **Add**.*
 
 The reviewer now appears in the members list and has access to the project.
 
-![Reviewer added](../images/workflow/25-AddingAReviewer3.jpg)
+![Reviewer added](../images/workflow/25-AddingAReviewer3.png)
 
-*The reviewer is listed with the REVIEWER badge. They can now view the project and mark versions as reviewed.*
+*`My Human Reviewer` now appears in the members list with a **REVIEWER** badge and can view the project and mark versions as reviewed. Use the red **×** beside a member to remove them from the project.*
 
 ---
 
@@ -134,7 +134,7 @@ The full lifecycle is visible in the History panel.
 
 ![History showing full lifecycle](../images/workflow/34-HistoryShowingReviewedFinal.png)
 
-*The Versions tab in History shows the complete status progression: SUBMITTED → REVIEWED → FINAL, with the user and timestamp for each transition.*
+*History showing the complete lifecycle, newest first: DRAFT → SUBMITTED → REVIEWED → FINAL. Each row records the date and time, the user responsible, the entity changed (**version**, **project**, or an individual **mapping**, linked by id), and the before → after values. Version transitions are interleaved with the mapping edits and **Validate map** runs that led up to them — including note and reasoning changes from the review discussion — so the full provenance of a finalised version is readable in one place.*
 
 ---
 

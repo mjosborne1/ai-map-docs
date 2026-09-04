@@ -18,6 +18,53 @@ The History panel is accessible from any project via the **History** button in t
 
 ## Troubleshooting
 
+### Check API connectivity first
+
+Before investigating a mapping problem in detail, confirm that AI-Map can reach the
+code-search API at all. Click **Test API** in the toolbar — the tooltip reads *Test API
+connectivity*.
+
+![Test API button in the toolbar](images/workflow/56-TestingTheAPI.png)
+
+*The **Test API** button sits in the main toolbar, beside **Context Bindings** and **+ New
+Project**.*
+
+The **API Connectivity Test** dialog takes a **Test text** — any term you would expect to
+map, such as `sodium serum` — and a **Context**, pre-filled from the current project or
+defaulting to the au-core `Observation.code` context. Click **Run test** to send a live
+request and display the raw JSON the API returns.
+
+![API Connectivity Test dialog](images/workflow/57-TestingTheAPI2.png)
+
+*A successful test. The response echoes the **context** and **endpoint** used, followed by
+`"ok": true` and the **matches** the API found — here LOINC `2951-2` (Sodium
+[Moles/volume] in Serum or Plasma) at 0.85 confidence, with the fsn, the **path** taken
+(`fast`), and the **reasoning** behind the match.*
+
+The quick check is the `"ok"` field:
+
+- `"ok": true` — AI-Map reached the API and it responded normally. Connectivity is fine, so
+  look for the cause of a mapping problem elsewhere (see below).
+- Anything else, or no response at all — the API or terminology server is unreachable or
+  erroring. Note the **endpoint** shown in the output and pass it to your administrator.
+
+Because the response includes the matches themselves, a successful test also tells you
+whether the API can find a sensible target for that particular term — useful for
+distinguishing "the service is down" from "this code genuinely has no good match".
+
+### Trying out a context binding
+
+The same dialog is a convenient place to try a context **before** committing it to a
+project. Paste a candidate context URL into the **Context** field, enter a representative
+source term, and run the test: the matches that come back are the ones a project bound to
+that context would draw on.
+
+This is worth doing before adding an unfamiliar context to the shared preset list via
+**⚙ Manage context bindings…** (see [Creating a project](workflow/getting-started.md)),
+particularly when you are unsure whether a context is spelled correctly or scopes the
+value set as you expect. A context that returns `"ok": true` but no useful matches is
+usually too narrow, or not the right element for the kind of code being mapped.
+
 ### Automap returns no match for some codes
 
 The automap log lists every code that did not return a result, together with the exact query sent to the API. Common causes:

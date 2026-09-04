@@ -79,6 +79,49 @@ Add a note to record your reasoning, then click **Save**.
 
 ---
 
+## Concept relationships and LOINC parts
+
+The generic metadata in Concept Properties tells you a concept's status, but not what it
+*means*. Two further sub-sections show how the target concept is actually defined, so you
+can check a suggested match against the terminology itself rather than taking the AI's
+reasoning text on trust. Both appear inside the Concept Properties panel — in the Edit
+Mapping dialog and in the read-only info popover — and each is shown only for the code
+system it applies to.
+
+**RELATIONSHIPS** (SNOMED CT targets) lists the concept's defining attributes as
+`attribute: value` rows — for example *Associated morphology: Infarct* and *Finding site:
+Myocardium structure* on a myocardial infarction concept. These are what distinguish the
+concept from its neighbours, so they are the quickest way to confirm that a plausible-looking
+match is about the right finding, site, and morphology.
+
+**PARTS** (LOINC targets) breaks the code down into its axes, in a fixed order:
+
+| Axis | What it tells you |
+| ---- | ----------------- |
+| **Component** | What is measured (e.g. *Glucose*) |
+| **Property** | The kind of quantity (e.g. *MCnc* — mass concentration) |
+| **Time** | Whether it is a point-in-time or timed measurement |
+| **System** | The specimen or system (e.g. *Serum or Plasma*) |
+| **Scale** | Quantitative, ordinal, nominal, or narrative |
+| **Method** | The method, where the code specifies one |
+| **Class** | The LOINC class the code belongs to |
+
+Axes that a given code does not specify are left out — **Method** in particular is absent
+from many codes. Reading the axes is the reliable way to catch the near-misses that matter
+in laboratory mapping: the right analyte measured on the wrong specimen, or a quantitative
+code proposed for an ordinal result.
+
+!!! note "Long relationship lists"
+    Some concepts — complex medicinal products especially — have a great many defining
+    relationships. The info popover shows the first 10 and then a note telling you how many
+    more there are; open the **Edit Mapping** dialog to read the complete list.
+
+A section is omitted entirely when it does not apply or the terminology server does not
+return that detail for the code, so an absent **RELATIONSHIPS** section is not in itself a
+sign that anything is wrong with the mapping.
+
+---
+
 ## Viewing the concept hierarchy
 
 From the Edit Mapping panel, click **Hierarchy** to expand a tree of the selected target concept's immediate parents and children, fetched live from the terminology server. Click any parent or child to re-centre the tree on that concept, or click **Use** to set it as the mapping target without leaving the panel — useful when the AI-suggested concept is close but a sibling or parent is a better fit.
