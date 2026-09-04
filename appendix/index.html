@@ -676,6 +676,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#check-api-connectivity-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check API connectivity first
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trying-out-a-context-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trying out a context binding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#automap-returns-no-match-for-some-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -760,6 +782,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#check-api-connectivity-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check API connectivity first
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trying-out-a-context-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trying out a context binding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#automap-returns-no-match-for-some-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -802,6 +846,42 @@
 <p><em>The Mappings tab shows each auto-mapped code with its confidence score, matched target code, and initial relationship. Manual edits appear below, showing exactly what changed and who made the change.</em></p>
 <hr />
 <h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="check-api-connectivity-first">Check API connectivity first</h3>
+<p>Before investigating a mapping problem in detail, confirm that AI-Map can reach the
+code-search API at all. Click <strong>Test API</strong> in the toolbar — the tooltip reads <em>Test API
+connectivity</em>.</p>
+<p><img alt="Test API button in the toolbar" src="../images/workflow/56-TestingTheAPI.png" /></p>
+<p><em>The <strong>Test API</strong> button sits in the main toolbar, beside <strong>Context Bindings</strong> and <strong>+ New
+Project</strong>.</em></p>
+<p>The <strong>API Connectivity Test</strong> dialog takes a <strong>Test text</strong> — any term you would expect to
+map, such as <code>sodium serum</code> — and a <strong>Context</strong>, pre-filled from the current project or
+defaulting to the au-core <code>Observation.code</code> context. Click <strong>Run test</strong> to send a live
+request and display the raw JSON the API returns.</p>
+<p><img alt="API Connectivity Test dialog" src="../images/workflow/57-TestingTheAPI2.png" /></p>
+<p><em>A successful test. The response echoes the <strong>context</strong> and <strong>endpoint</strong> used, followed by
+<code>"ok": true</code> and the <strong>matches</strong> the API found — here LOINC <code>2951-2</code> (Sodium
+[Moles/volume] in Serum or Plasma) at 0.85 confidence, with the fsn, the <strong>path</strong> taken
+(<code>fast</code>), and the <strong>reasoning</strong> behind the match.</em></p>
+<p>The quick check is the <code>"ok"</code> field:</p>
+<ul>
+<li><code>"ok": true</code> — AI-Map reached the API and it responded normally. Connectivity is fine, so
+  look for the cause of a mapping problem elsewhere (see below).</li>
+<li>Anything else, or no response at all — the API or terminology server is unreachable or
+  erroring. Note the <strong>endpoint</strong> shown in the output and pass it to your administrator.</li>
+</ul>
+<p>Because the response includes the matches themselves, a successful test also tells you
+whether the API can find a sensible target for that particular term — useful for
+distinguishing "the service is down" from "this code genuinely has no good match".</p>
+<h3 id="trying-out-a-context-binding">Trying out a context binding</h3>
+<p>The same dialog is a convenient place to try a context <strong>before</strong> committing it to a
+project. Paste a candidate context URL into the <strong>Context</strong> field, enter a representative
+source term, and run the test: the matches that come back are the ones a project bound to
+that context would draw on.</p>
+<p>This is worth doing before adding an unfamiliar context to the shared preset list via
+<strong>⚙ Manage context bindings…</strong> (see <a href="../workflow/getting-started/">Creating a project</a>),
+particularly when you are unsure whether a context is spelled correctly or scopes the
+value set as you expect. A context that returns <code>"ok": true</code> but no useful matches is
+usually too narrow, or not the right element for the kind of code being mapped.</p>
 <h3 id="automap-returns-no-match-for-some-codes">Automap returns no match for some codes</h3>
 <p>The automap log lists every code that did not return a result, together with the exact query sent to the API. Common causes:</p>
 <ul>

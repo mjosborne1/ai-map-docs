@@ -528,6 +528,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#concept-relationships-and-loinc-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept relationships and LOINC parts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#viewing-the-concept-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -834,6 +845,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#concept-relationships-and-loinc-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept relationships and LOINC parts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#viewing-the-concept-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -899,7 +921,7 @@
 <p>After automap, the table shows every source code alongside its proposed target. Codes are colour-coded by relationship type: <strong>Inexact</strong> (orange), <strong>Equivalent</strong> (green), <strong>Broader</strong> (blue), <strong>Narrower</strong> (teal), <strong>No Map</strong> (red). Unmapped codes have no target.</p>
 <p>Use the filter tabs to work through one relationship type at a time, or use the keyboard shortcuts shown in the toolbar to navigate and set relationships without opening the edit panel.</p>
 <p><img alt="Mapping table after automap" src="../../images/workflow/15-EditMappingfromTable.png" /></p>
-<p><em>The table after automap. <code>WBC</code> and <code>RBC</code> have no target yet; <code>HEB</code> has been matched to LOINC <code>718-7</code> (Haemoglobin) at 85% confidence. Click the </em><em>Edit</em><em> button or press <code>e</code> to open the edit panel.</em></p>
+<p><em>The table after automap. <code>WBC</code> and <code>RBC</code> have no target yet; <code>HEB</code> has been matched to LOINC <code>718-7</code> (Haemoglobin) at 85% confidence. Click the <strong>Edit</strong> button or press <code>e</code> to open the edit panel.</em></p>
 <hr />
 <h2 id="choosing-which-columns-to-display">Choosing which columns to display</h2>
 <p>The mapping table can show a lot of information, and not every column is useful for every project. Use the <strong>column selector</strong> — the columns icon at the top-right of the table, next to the search box — to control which columns are displayed.</p>
@@ -910,7 +932,7 @@
 <h2 id="sorting-the-table">Sorting the table</h2>
 <p>Click a column header to sort the table by that column. Most columns are sortable — including <strong>Source Code</strong>, <strong>Description</strong>, and any user-defined source columns (e.g. Panel_Name) — as well as <strong>Target Code</strong>, <strong>Display</strong>, and <strong>Conf.</strong> The sort icon (↕) next to each header indicates a sortable column; click to sort ascending, click again to reverse. The active sort column is highlighted.</p>
 <p><img alt="Sorting columns" src="../../images/workflow/48-SortingColumns.png" /></p>
-<p><em>Column headers show a sort icon. Text columns sort alphanumerically and numeric columns (such as Conf.) sort by value. The highlighted </em><em>Conf.</em><em> header indicates the table is currently sorted by confidence.</em></p>
+<p><em>Column headers show a sort icon. Text columns sort alphanumerically and numeric columns (such as Conf.) sort by value. The highlighted <strong>Conf.</strong> header indicates the table is currently sorted by confidence.</em></p>
 <p>Sorting alphanumerically by Source Code or Description makes it easy to locate a specific term, while sorting by confidence helps you review the lowest-confidence matches first.</p>
 <hr />
 <h2 id="binding-indicator">Binding indicator</h2>
@@ -926,16 +948,81 @@
 <h2 id="editing-a-mapping">Editing a mapping</h2>
 <p>The <strong>Edit Mapping</strong> panel shows the source columns for context and a live search against the target code system.</p>
 <p><img alt="Edit Mapping — search" src="../../images/workflow/16-EditMappingTarget.png" /></p>
-<p><em>Source columns (Specimen Type, Units, Panel Code, Panel Name) are shown for reference. Type in the search box to find candidates. Results are split into </em><em>Context Search</em><em> (within the FHIR binding) and </em><em>Broader ValueSet</em><em> (wider search). Use </em><em>Copy description</em><em> to pre-fill the search with the source description.</em></p>
+<p><em>Source columns (Specimen Type, Units, Panel Code, Panel Name) are shown for reference. Type in the search box to find candidates. Results are split into <strong>Context Search</strong> (within the FHIR binding) and <strong>Broader ValueSet</strong> (wider search). Use <strong>Copy description</strong> to pre-fill the search with the source description.</em></p>
 <p>Select a candidate to load its concept details.</p>
 <p><img alt="Edit Mapping — set relationship" src="../../images/workflow/17-SetMapTargetRelationship.png" /></p>
-<p><em>Once a target is selected, the concept properties (parent, active status, designations, synonyms) are displayed. Choose the relationship type — </em><em>Equivalent</em><em>, </em><em>Broader</em><em>, </em><em>Narrower</em><em>, </em><em>Inexact</em><em>, or </em><em>No Map</em><em> — then set Map Status to </em><em>Mapped</em><em>.</em></p>
+<p><em>Once a target is selected, the concept properties (parent, active status, designations, synonyms) are displayed. Choose the relationship type — <strong>Equivalent</strong>, <strong>Broader</strong>, <strong>Narrower</strong>, <strong>Inexact</strong>, or <strong>No Map</strong> — then set Map Status to <strong>Mapped</strong>.</em></p>
 <p>The <strong>Concept Properties</strong> panel shows the fully specified name, display name, and synonyms to help confirm the match is semantically correct.</p>
 <p><img alt="Concept properties" src="../../images/workflow/18-ConceptProperties.png" /></p>
 <p><em>Concept properties for the selected target. Review the fully specified name and synonyms to confirm the concept matches your source term's intent.</em></p>
 <p>Add a note to record your reasoning, then click <strong>Save</strong>.</p>
 <p><img alt="Add note and save" src="../../images/workflow/19-AddNoteThenSave.png" /></p>
-<p><em>Use the Notes field to record why this target was chosen (e.g. which reference or guideline was consulted). Check </em><em>Flag for manual review</em><em> if the mapping needs a second opinion.</em></p>
+<p><em>Use the Notes field to record why this target was chosen (e.g. which reference or guideline was consulted). Check <strong>Flag for manual review</strong> if the mapping needs a second opinion.</em></p>
+<hr />
+<h2 id="concept-relationships-and-loinc-parts">Concept relationships and LOINC parts</h2>
+<p>The generic metadata in Concept Properties tells you a concept's status, but not what it
+<em>means</em>. Two further sub-sections show how the target concept is actually defined, so you
+can check a suggested match against the terminology itself rather than taking the AI's
+reasoning text on trust. Both appear inside the Concept Properties panel — in the Edit
+Mapping dialog and in the read-only info popover — and each is shown only for the code
+system it applies to.</p>
+<p><strong>RELATIONSHIPS</strong> (SNOMED CT targets) lists the concept's defining attributes as
+<code>attribute: value</code> rows — for example <em>Associated morphology: Infarct</em> and <em>Finding site:
+Myocardium structure</em> on a myocardial infarction concept. These are what distinguish the
+concept from its neighbours, so they are the quickest way to confirm that a plausible-looking
+match is about the right finding, site, and morphology.</p>
+<p><strong>PARTS</strong> (LOINC targets) breaks the code down into its axes, in a fixed order:</p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Component</strong></td>
+<td>What is measured (e.g. <em>Glucose</em>)</td>
+</tr>
+<tr>
+<td><strong>Property</strong></td>
+<td>The kind of quantity (e.g. <em>MCnc</em> — mass concentration)</td>
+</tr>
+<tr>
+<td><strong>Time</strong></td>
+<td>Whether it is a point-in-time or timed measurement</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>The specimen or system (e.g. <em>Serum or Plasma</em>)</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Quantitative, ordinal, nominal, or narrative</td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td>The method, where the code specifies one</td>
+</tr>
+<tr>
+<td><strong>Class</strong></td>
+<td>The LOINC class the code belongs to</td>
+</tr>
+</tbody>
+</table>
+<p>Axes that a given code does not specify are left out — <strong>Method</strong> in particular is absent
+from many codes. Reading the axes is the reliable way to catch the near-misses that matter
+in laboratory mapping: the right analyte measured on the wrong specimen, or a quantitative
+code proposed for an ordinal result.</p>
+<div class="admonition note">
+<p class="admonition-title">Long relationship lists</p>
+<p>Some concepts — complex medicinal products especially — have a great many defining
+relationships. The info popover shows the first 10 and then a note telling you how many
+more there are; open the <strong>Edit Mapping</strong> dialog to read the complete list.</p>
+</div>
+<p>A section is omitted entirely when it does not apply or the terminology server does not
+return that detail for the code, so an absent <strong>RELATIONSHIPS</strong> section is not in itself a
+sign that anything is wrong with the mapping.</p>
 <hr />
 <h2 id="viewing-the-concept-hierarchy">Viewing the concept hierarchy</h2>
 <p>From the Edit Mapping panel, click <strong>Hierarchy</strong> to expand a tree of the selected target concept's immediate parents and children, fetched live from the terminology server. Click any parent or child to re-centre the tree on that concept, or click <strong>Use</strong> to set it as the mapping target without leaving the panel — useful when the AI-suggested concept is close but a sibling or parent is a better fit.</p>
@@ -949,6 +1036,7 @@
 <li><strong>Discussion</strong> — a comment thread for back-and-forth between the author and reviewer. Type a message and click <strong>Post comment</strong>; use <strong>Reply</strong> to respond to a specific comment, or <strong>Edit</strong>/<strong>Delete</strong> on your own comments. Comments support one level of replies.</li>
 </ul>
 <p>Readers can view notes and the discussion thread but cannot post, edit, or delete comments.</p>
+<p>See <a href="../version-management/#discussing-a-mapping-with-the-reviewer">Discussing a mapping with the reviewer</a> for a worked example of an author and reviewer using this panel during review.</p>
 <hr />
 <h2 id="completed-mappings">Completed mappings</h2>
 <p>Work through all codes until the <strong>Unmapped</strong> count reaches zero.</p>
