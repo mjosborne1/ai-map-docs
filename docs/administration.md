@@ -63,18 +63,9 @@ Notifications are best-effort and never block a sign-in: if mail is misconfigure
 service is down, the registration still lands in the queue and the badge still appears — you
 simply will not be told about it by email.
 
-Email is enabled only when the deployment sets both a connection string and a sender address;
-leaving the connection string unset is how it is turned off. The relevant settings, in
-`config.json` or as environment variables, are:
-
-| `config.json` key | Environment variable | Purpose |
-| ----------------- | -------------------- | ------- |
-| `email_connection_string` | `AIMAP_EMAIL_CONNECTION_STRING` | Azure Communication Services connection string. |
-| `email_sender` | `AIMAP_EMAIL_SENDER` | Verified sender address on the linked domain. |
-| `app_base_url` | `AIMAP_BASE_URL` | Public base URL, used to link back to AI-Map from the email. |
-
-Recipients are the addresses in the `admin_emails` setting — the same list that grants admin
-rights.
+Notification email is configured at deployment time and is off unless it has been set up;
+recipients are the same administrators who hold admin rights. If you are not receiving these
+emails and expect to be, ask whoever maintains the deployment to check the mail settings.
 
 ---
 
