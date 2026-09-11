@@ -525,6 +525,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Editing a mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-agents-pick-and-the-alternatives-it-considered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The agent's pick and the alternatives it considered
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -557,6 +574,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Notes and discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-rows-under-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding the rows under discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -842,6 +876,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Editing a mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-agents-pick-and-the-alternatives-it-considered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The agent's pick and the alternatives it considered
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -874,6 +925,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Notes and discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-rows-under-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding the rows under discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -949,6 +1017,68 @@
 <p>The <strong>Edit Mapping</strong> panel shows the source columns for context and a live search against the target code system.</p>
 <p><img alt="Edit Mapping — search" src="../../images/workflow/16-EditMappingTarget.png" /></p>
 <p><em>Source columns (Specimen Type, Units, Panel Code, Panel Name) are shown for reference. Type in the search box to find candidates. Results are split into <strong>Context Search</strong> (within the FHIR binding) and <strong>Broader ValueSet</strong> (wider search). Use <strong>Copy description</strong> to pre-fill the search with the source description.</em></p>
+<h3 id="the-agents-pick-and-the-alternatives-it-considered">The agent's pick and the alternatives it considered</h3>
+<p>Under <strong>Context Search</strong>, AI-Map shows not only the concept the AI settled on but the other
+candidates it weighed up on the way there. The two are distinguished by a marker and by the
+kind of score they carry:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Marker</th>
+<th>Score badge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The agent's chosen match</strong></td>
+<td>✨ sparkles icon</td>
+<td>Green (≥ 70%) or amber <strong>confidence</strong> percentage</td>
+</tr>
+<tr>
+<td><strong>Candidates considered</strong></td>
+<td>no marker</td>
+<td>Grey <strong>relevance</strong> percentage</td>
+</tr>
+</tbody>
+</table>
+<p>The chosen match is always listed first and is never re-ordered below a candidate. Its
+<strong>reasoning</strong> — the AI's explanation of why this concept fits the source term — is shown
+beneath it and is saved with the mapping if you select it.</p>
+<p>Candidates show a short note explaining how they relate to your search text (for example
+<em>"more specific specimen than a general request"</em>). That note is there to help you choose
+between them; it is not saved with the mapping, because it describes the search rather than
+the mapping decision.</p>
+<div class="admonition note">
+<p class="admonition-title">Confidence and relevance are different scales</p>
+<p>A candidate's grey <strong>relevance</strong> badge is deliberately not coloured like a match's
+confidence badge. Relevance measures how closely a concept matched the search text;
+confidence measures how sure the agent is that its chosen concept is the right target.
+A candidate scoring 90% relevance is not therefore a better answer than a match at 85%
+confidence — read the two as separate signals, and judge the concepts themselves.</p>
+</div>
+<p>The same match-and-candidates list appears in the <strong>AI Suggestions</strong> panel, which is
+pre-populated from the source description when you open the edit panel.</p>
+<p><img alt="Context Search showing the chosen match and the candidates considered" src="../../images/workflow/62-SearchCandidates.png" /></p>
+<p><em>Searching <code>LMW Heparin</code> for the source code <code>H0010 — Anti Xa levels</code>. The circled first row
+is the agent's chosen match, LOINC <code>32684-3</code> (LMW Heparin [Units/volume] in Platelet poor
+plasma), marked with the ✨ icon and carrying 90% <strong>confidence</strong>. The three rows beneath it
+are the candidates it considered, each with a grey <strong>relevance</strong> badge — 90%, 80% and 70%.
+Below them, <strong>Broader ValueSet</strong> repeats one of the concepts from the wider search.</em></p>
+<p>Note that in this example the first candidate scores 90% relevance — the same number as the
+match's 90% confidence — while being a different concept (<code>LMW Heparin [Measurement]</code> rather
+than <code>[Units/volume]</code>). That is exactly why the two badges are styled differently: the equal
+percentages are measuring different things and do not make the two results equally good.</p>
+<p><img alt="AI Suggestions panel listing candidates" src="../../images/workflow/63-AiSuggestionsCandidates.png" /></p>
+<p><em>The <strong>AI Suggestions</strong> panel for a base excess test. Here the agent returned no single
+confident match — every row is a candidate, each with a grey relevance badge and a note
+saying how it differs from the source term: "input did not specify arterial blood", then
+venous, then capillary. The source description is not specific enough about specimen to
+choose between them, which is the signal to check the source data or consult the requesting
+service rather than simply take the top row.</em></p>
+<p>Whichever result you select — the agent's match, one of its candidates, or a Broader
+ValueSet result — AI-Map records where the choice came from in the audit history, so a later
+reviewer can see whether the mapper accepted the AI's pick or overrode it.</p>
 <p>Select a candidate to load its concept details.</p>
 <p><img alt="Edit Mapping — set relationship" src="../../images/workflow/17-SetMapTargetRelationship.png" /></p>
 <p><em>Once a target is selected, the concept properties (parent, active status, designations, synonyms) are displayed. Choose the relationship type — <strong>Equivalent</strong>, <strong>Broader</strong>, <strong>Narrower</strong>, <strong>Inexact</strong>, or <strong>No Map</strong> — then set Map Status to <strong>Mapped</strong>.</em></p>
@@ -1036,6 +1166,19 @@ sign that anything is wrong with the mapping.</p>
 <li><strong>Discussion</strong> — a comment thread for back-and-forth between the author and reviewer. Type a message and click <strong>Post comment</strong>; use <strong>Reply</strong> to respond to a specific comment, or <strong>Edit</strong>/<strong>Delete</strong> on your own comments. Comments support one level of replies.</li>
 </ul>
 <p>Readers can view notes and the discussion thread but cannot post, edit, or delete comments.</p>
+<h3 id="finding-the-rows-under-discussion">Finding the rows under discussion</h3>
+<p>Spotting highlighted icons row by row does not scale on a large map. Use the <strong>Has
+discussion</strong> button in the toolbar — <em>"Show only rows with a note or discussion comment"</em> —
+to filter the table down to just those rows. Click it again to clear the filter and return
+to the full list.</p>
+<p>This is the quickest way for an author to pick up everything a reviewer has queried, and it
+combines with the relationship filter tabs, so you can narrow to (say) only the Inexact rows
+that also carry an open comment.</p>
+<p><img alt="Has discussion filter in the toolbar" src="../../images/workflow/66-HasDiscussionFilter.png" /></p>
+<p><em>The <strong>Has discussion</strong> button sits at the right-hand end of the filter row, after the
+relationship tabs, the status dropdown, and the confidence filter. With it active, the table
+shows only rows carrying a note or a comment — here every visible row has a highlighted Notes
+icon, and code <code>37</code> also carries a flag.</em></p>
 <p>See <a href="../version-management/#discussing-a-mapping-with-the-reviewer">Discussing a mapping with the reviewer</a> for a worked example of an author and reviewer using this panel during review.</p>
 <hr />
 <h2 id="completed-mappings">Completed mappings</h2>

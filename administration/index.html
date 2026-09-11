@@ -628,6 +628,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-pending-approval-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pending approval queue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The pending approval queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approval-notification-emails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval notification emails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-context-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing context bindings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#clearing-the-concept-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -711,6 +750,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-pending-approval-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pending approval queue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The pending approval queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approval-notification-emails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval notification emails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-context-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing context bindings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#clearing-the-concept-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -742,13 +820,115 @@
 <p>Administrative functions are available to users with the <strong>Admin</strong> role. Open the <strong>User Administration</strong> dialog from the toolbar to manage users and perform maintenance tasks.</p>
 <p>Site-wide admin access (this page) is separate from the per-project <strong>Owner / Author / Reviewer / Reader</strong> roles described in <a href="../workflow/version-management/#project-roles">Project roles</a> — an admin can manage any user account, but still needs a project role to work on a specific mapping project.</p>
 <h2 id="managing-user-accounts">Managing user accounts</h2>
-<p>The <strong>User Administration</strong> dialog lists every user who has logged into AI-Map, with their name, email, login provider, and last login time. Search by name or email to find a specific user.</p>
+<p>The <strong>User Administration</strong> dialog lists every user who has logged into AI-Map, with their name, email, login provider, last login time, and account <strong>Status</strong>. Search by name or email to find a specific user.</p>
+<p>Every account is in one of three states:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Active</strong></td>
+<td>The account has been approved and can sign in.</td>
+</tr>
+<tr>
+<td><strong>Pending</strong></td>
+<td>The person has signed in for the first time and is waiting for an administrator to approve them. Pending accounts are listed first.</td>
+</tr>
+<tr>
+<td><strong>Disabled</strong></td>
+<td>An administrator has disabled or rejected the account. It cannot sign in.</td>
+</tr>
+</tbody>
+</table>
 <p>For each user you can:</p>
 <ul>
-<li><strong>Disable / Enable</strong> the account — a disabled user cannot log in.</li>
-<li><strong>Grant / Remove admin</strong> — grants or revokes site-wide admin access.</li>
+<li><strong>Approve / Reject</strong> a <em>pending</em> account — Approve activates it; Reject leaves it inactive and records the decision, so the account moves to <strong>Disabled</strong> rather than staying in the queue.</li>
+<li><strong>Disable / Enable</strong> an account that has already been decided on — a disabled user cannot log in.</li>
 </ul>
-<p>You cannot disable your own account or remove your own admin access, to prevent accidentally locking yourself out.</p>
+<p>You cannot disable your own account, to prevent accidentally locking yourself out.</p>
+<!-- TODO screenshot 60-AdminPendingApproveReject.png — the User Administration dialog with a
+     Pending row showing its blue badge and the green Approve / red Reject buttons, alongside
+     an Active row for contrast. Needs a real pending registration to stage.
+     TODO screenshot (optional) 61-RejectConfirm.png — the Reject confirmation dialog. -->
+
+<div class="admonition note">
+<p class="admonition-title">Admin access is not granted from the application</p>
+<p>There is no <strong>Make Admin</strong> control. Site-wide admin rights come from the <code>admin_emails</code>
+deployment setting, which is authoritative in both directions: an address on that list is
+made an admin (and activated) at login, and an account removed from the list has its admin
+rights revoked at its next login. The <strong>Admin</strong> badge in the user list shows who currently
+holds them. To change who is an administrator, ask whoever maintains the deployment
+configuration.</p>
+</div>
+<h2 id="the-pending-approval-queue">The pending approval queue</h2>
+<p>Nothing in a pending registration tells the person waiting when they will be approved, so the
+queue has to come to you. When one or more accounts are waiting, the <strong>Admin</strong> button in the
+toolbar carries a blue count badge — <em>"Accounts waiting for approval"</em> — showing how many.
+The badge disappears once the queue is empty, and updates as soon as you approve or reject
+an account without needing to reload the page.</p>
+<p><img alt="Admin button with pending count badge" src="../images/workflow/59-AdminPendingBadge.png" /></p>
+<p><em>The <strong>Admin</strong> button in the toolbar with a pending count of 2 — two accounts are waiting for
+a decision. The badge is hidden entirely when the queue is empty.</em></p>
+<p>Inside the dialog, pending accounts are sorted to the top of the list so they are the first
+thing you see.</p>
+<h3 id="approval-notification-emails">Approval notification emails</h3>
+<p>Where the deployment is configured for it, AI-Map also emails the administrators as soon as a
+registration arrives, with the subject <em>"AI Map: access request from &lt;name&gt;"</em>. The message
+gives the person's name, email, and login provider, and links back to AI-Map with a reminder
+to use the <strong>Admin</strong> button to approve or reject.</p>
+<p>Notifications are best-effort and never block a sign-in: if mail is misconfigured or the mail
+service is down, the registration still lands in the queue and the badge still appears — you
+simply will not be told about it by email.</p>
+<p>Email is enabled only when the deployment sets both a connection string and a sender address;
+leaving the connection string unset is how it is turned off. The relevant settings, in
+<code>config.json</code> or as environment variables, are:</p>
+<table>
+<thead>
+<tr>
+<th><code>config.json</code> key</th>
+<th>Environment variable</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email_connection_string</code></td>
+<td><code>AIMAP_EMAIL_CONNECTION_STRING</code></td>
+<td>Azure Communication Services connection string.</td>
+</tr>
+<tr>
+<td><code>email_sender</code></td>
+<td><code>AIMAP_EMAIL_SENDER</code></td>
+<td>Verified sender address on the linked domain.</td>
+</tr>
+<tr>
+<td><code>app_base_url</code></td>
+<td><code>AIMAP_BASE_URL</code></td>
+<td>Public base URL, used to link back to AI-Map from the email.</td>
+</tr>
+</tbody>
+</table>
+<p>Recipients are the addresses in the <code>admin_emails</code> setting — the same list that grants admin
+rights.</p>
+<hr />
+<h2 id="managing-context-bindings">Managing context bindings</h2>
+<p>Context bindings are the shared list of FHIR contexts offered when a project is created (see
+<a href="../workflow/getting-started/#creating-a-project">Creating a project</a>). Because a binding is
+deployment-wide configuration — and the URL it carries is fetched server-side during
+validation — only an administrator can add, edit, or delete one. Everyone else can open
+<strong>⚙ Manage context bindings…</strong> and read the list, but sees no editing controls.</p>
+<p>Before adding an unfamiliar binding, try it in the <strong>Test API</strong> dialog first; see
+<a href="../appendix/#trying-out-a-context-binding">Trying out a context binding</a>.</p>
+<p><img alt="Context Bindings dialog as a non-admin sees it" src="../images/workflow/65-ContextBindingsReadOnly.png" /></p>
+<p><em>The Context Bindings dialog for a non-admin: the Description, URL, and Secondary Valueset of
+each binding are all readable, but the rows carry no edit or delete buttons and there is no
+<strong>Add binding</strong> form beneath the table — only <strong>Close</strong>. An administrator sees the same list
+with those controls in place.</em></p>
+<hr />
 <h2 id="clearing-the-concept-cache">Clearing the concept cache</h2>
 <p>AI-Map caches terminology lookups (concept displays, properties, and value set membership) to speed up automap and the mapping table. If the underlying terminology server is updated — for example when a code system version changes or a concept is retired — the cache can hold stale results.</p>
 <p>Click <strong>Clear Concept Cache</strong> in the User Administration dialog to purge all cached terminology lookups. Subsequent lookups are re-fetched fresh from the terminology server.</p>
