@@ -59,6 +59,62 @@ The **Edit Mapping** panel shows the source columns for context and a live searc
 
 *Source columns (Specimen Type, Units, Panel Code, Panel Name) are shown for reference. Type in the search box to find candidates. Results are split into **Context Search** (within the FHIR binding) and **Broader ValueSet** (wider search). Use **Copy description** to pre-fill the search with the source description.*
 
+### The agent's pick and the alternatives it considered
+
+Under **Context Search**, AI-Map shows not only the concept the AI settled on but the other
+candidates it weighed up on the way there. The two are distinguished by a marker and by the
+kind of score they carry:
+
+| | Marker | Score badge |
+| --- | ------ | ----------- |
+| **The agent's chosen match** | ✨ sparkles icon | Green (≥ 70%) or amber **confidence** percentage |
+| **Candidates considered** | no marker | Grey **relevance** percentage |
+
+The chosen match is always listed first and is never re-ordered below a candidate. Its
+**reasoning** — the AI's explanation of why this concept fits the source term — is shown
+beneath it and is saved with the mapping if you select it.
+
+Candidates show a short note explaining how they relate to your search text (for example
+*"more specific specimen than a general request"*). That note is there to help you choose
+between them; it is not saved with the mapping, because it describes the search rather than
+the mapping decision.
+
+!!! note "Confidence and relevance are different scales"
+    A candidate's grey **relevance** badge is deliberately not coloured like a match's
+    confidence badge. Relevance measures how closely a concept matched the search text;
+    confidence measures how sure the agent is that its chosen concept is the right target.
+    A candidate scoring 90% relevance is not therefore a better answer than a match at 85%
+    confidence — read the two as separate signals, and judge the concepts themselves.
+
+The same match-and-candidates list appears in the **AI Suggestions** panel, which is
+pre-populated from the source description when you open the edit panel.
+
+![Context Search showing the chosen match and the candidates considered](../images/workflow/62-SearchCandidates.png)
+
+*Searching `LMW Heparin` for the source code `H0010 — Anti Xa levels`. The circled first row
+is the agent's chosen match, LOINC `32684-3` (LMW Heparin [Units/volume] in Platelet poor
+plasma), marked with the ✨ icon and carrying 90% **confidence**. The three rows beneath it
+are the candidates it considered, each with a grey **relevance** badge — 90%, 80% and 70%.
+Below them, **Broader ValueSet** repeats one of the concepts from the wider search.*
+
+Note that in this example the first candidate scores 90% relevance — the same number as the
+match's 90% confidence — while being a different concept (`LMW Heparin [Measurement]` rather
+than `[Units/volume]`). That is exactly why the two badges are styled differently: the equal
+percentages are measuring different things and do not make the two results equally good.
+
+![AI Suggestions panel listing candidates](../images/workflow/63-AiSuggestionsCandidates.png)
+
+*The **AI Suggestions** panel for a base excess test. Here the agent returned no single
+confident match — every row is a candidate, each with a grey relevance badge and a note
+saying how it differs from the source term: "input did not specify arterial blood", then
+venous, then capillary. The source description is not specific enough about specimen to
+choose between them, which is the signal to check the source data or consult the requesting
+service rather than simply take the top row.*
+
+Whichever result you select — the agent's match, one of its candidates, or a Broader
+ValueSet result — AI-Map records where the choice came from in the audit history, so a later
+reviewer can see whether the mapper accepted the AI's pick or overrode it.
+
 Select a candidate to load its concept details.
 
 ![Edit Mapping — set relationship](../images/workflow/17-SetMapTargetRelationship.png)
@@ -140,6 +196,24 @@ The panel has two parts:
 - **Discussion** — a comment thread for back-and-forth between the author and reviewer. Type a message and click **Post comment**; use **Reply** to respond to a specific comment, or **Edit**/**Delete** on your own comments. Comments support one level of replies.
 
 Readers can view notes and the discussion thread but cannot post, edit, or delete comments.
+
+### Finding the rows under discussion
+
+Spotting highlighted icons row by row does not scale on a large map. Use the **Has
+discussion** button in the toolbar — *"Show only rows with a note or discussion comment"* —
+to filter the table down to just those rows. Click it again to clear the filter and return
+to the full list.
+
+This is the quickest way for an author to pick up everything a reviewer has queried, and it
+combines with the relationship filter tabs, so you can narrow to (say) only the Inexact rows
+that also carry an open comment.
+
+![Has discussion filter in the toolbar](../images/workflow/66-HasDiscussionFilter.png)
+
+*The **Has discussion** button sits at the right-hand end of the filter row, after the
+relationship tabs, the status dropdown, and the confidence filter. With it active, the table
+shows only rows carrying a note or a comment — here every visible row has a highlighted Notes
+icon, and code `37` also carries a flag.*
 
 See [Discussing a mapping with the reviewer](version-management.md#discussing-a-mapping-with-the-reviewer) for a worked example of an author and reviewer using this panel during review.
 

@@ -12,4 +12,4 @@ The goal of this documentation is to provide an operational guide to the mapping
 data quality expectations, and governance practices.
 
 !!! info "Documentation version"
-    This documentation aligns with **AI-Map 0.10.0**.
+    This documentation aligns with **AI-Map 0.12.0**.

@@ -24,6 +24,13 @@ A file picker opens. Select your source file and click **Open**.
 
 *Navigate to and select your source file.*
 
+Uploads are capped at a maximum file size — **32 MB** by default, though your administrator
+can change it. A larger file is rejected before it is read, with the message *"Upload too
+large — the maximum accepted size is 32 MB."* The limit sits well above the largest
+realistic source list; if you hit it, the file most likely contains embedded images or
+formatting rather than an unusual number of codes. Re-save it as CSV or TSV and upload
+again.
+
 ---
 
 ## Mapping columns

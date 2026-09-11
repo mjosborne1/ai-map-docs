@@ -13,6 +13,12 @@ Access to a project is controlled by per-project roles, assigned from the **Memb
 
 Use **Reader** for stakeholders who need visibility into a mapping project (e.g. a clinical sign-off contact) without the ability to change it.
 
+A role is also what grants access to the project in the first place. Every project screen and
+action is checked against membership, so a user who is not a member of a project cannot open
+it, export from it, or read its history — even by following a direct link, and even if they
+are a site-wide administrator. An administrator who needs to work on a project adds
+themselves as a member like anyone else.
+
 ---
 
 ## Audit history
