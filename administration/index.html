@@ -883,37 +883,9 @@ to use the <strong>Admin</strong> button to approve or reject.</p>
 <p>Notifications are best-effort and never block a sign-in: if mail is misconfigured or the mail
 service is down, the registration still lands in the queue and the badge still appears — you
 simply will not be told about it by email.</p>
-<p>Email is enabled only when the deployment sets both a connection string and a sender address;
-leaving the connection string unset is how it is turned off. The relevant settings, in
-<code>config.json</code> or as environment variables, are:</p>
-<table>
-<thead>
-<tr>
-<th><code>config.json</code> key</th>
-<th>Environment variable</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>email_connection_string</code></td>
-<td><code>AIMAP_EMAIL_CONNECTION_STRING</code></td>
-<td>Azure Communication Services connection string.</td>
-</tr>
-<tr>
-<td><code>email_sender</code></td>
-<td><code>AIMAP_EMAIL_SENDER</code></td>
-<td>Verified sender address on the linked domain.</td>
-</tr>
-<tr>
-<td><code>app_base_url</code></td>
-<td><code>AIMAP_BASE_URL</code></td>
-<td>Public base URL, used to link back to AI-Map from the email.</td>
-</tr>
-</tbody>
-</table>
-<p>Recipients are the addresses in the <code>admin_emails</code> setting — the same list that grants admin
-rights.</p>
+<p>Notification email is configured at deployment time and is off unless it has been set up;
+recipients are the same administrators who hold admin rights. If you are not receiving these
+emails and expect to be, ask whoever maintains the deployment to check the mail settings.</p>
 <hr />
 <h2 id="managing-context-bindings">Managing context bindings</h2>
 <p>Context bindings are the shared list of FHIR contexts offered when a project is created (see
