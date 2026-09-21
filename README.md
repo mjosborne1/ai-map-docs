@@ -34,35 +34,44 @@ edit it by hand.
 
 ## Publishing to GitHub Pages
 
-The site is served from the `gh-pages` branch of this repository. That branch
-holds only rendered HTML and is managed entirely by MkDocs — do not edit or
-merge into it manually.
+Deployment is automatic. The **Deploy docs** workflow
+(`.github/workflows/main.yml`) runs on every push to `main` — including a
+merged pull request — and can also be started by hand from the **Actions** tab
+(`workflow_dispatch`). It installs `mkdocs-material`, runs `mkdocs build`, and
+uploads `site/` as a Pages artifact, which a second job deploys. The site is
+live a minute or so after the run goes green.
 
-To publish the current state of `main`:
-
-```bash
-mkdocs gh-deploy --clean
-```
-
-This builds the site and force-pushes the result to `gh-pages`, then GitHub
-Pages serves it within a minute or so. Each deploy is recorded as a commit like
-`Deployed <sha> with MkDocs version: 1.6.1`, so you can always tell which
-source commit is currently live:
+So the whole publishing step is: merge to `main`, then watch the run.
 
 ```bash
-git log --oneline -1 origin/gh-pages
+gh run list --workflow "Deploy docs" --limit 3
+gh run watch                     # follow the run in progress
 ```
 
-Deployment is a separate, manual step: pushing to `main` updates the Markdown
-source but does **not** update the published site until `mkdocs gh-deploy` is
-run. Commit and push your source changes to `main` first, so that the deployed
-commit sha refers to something that exists on the remote.
+If a run fails, the site keeps serving the last successful deploy — nothing is
+torn down by a failed build. Fix the source, push again, and the next run
+replaces it. Note that the workflow runs a plain `mkdocs build`, not a strict
+one, so a broken internal link or a missing image will deploy rather than fail
+the run — run `mkdocs build --strict` locally before pushing.
+
+Concurrent runs are serialised on a `pages` group and are *not* cancelled
+in-progress, so two merges in quick succession deploy in order rather than
+racing.
 
 ### One-time repository setup
 
-Under **Settings → Pages**, set the source to the `gh-pages` branch, `/ (root)`
-directory. MkDocs writes the `.nojekyll` marker itself, so GitHub serves the
-built output as-is rather than running it through Jekyll.
+Under **Settings → Pages**, the source must be **GitHub Actions** — it already
+is for this repository, and the first workflow run deployed successfully. The
+workflow publishes through the Pages artifact API rather than committing
+rendered HTML, so nothing needs to be served from a branch.
+
+### The old gh-pages branch
+
+This repository previously deployed by running `mkdocs gh-deploy --clean`
+locally, which force-pushed rendered HTML to a `gh-pages` branch. That branch
+is no longer part of publishing. Do not run `gh-deploy` any more — with the
+Pages source set to **GitHub Actions** it would not change the live site, and
+it only adds confusing commits to a branch nobody reads.
 
 ## Docs source
 
