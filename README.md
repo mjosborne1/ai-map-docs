@@ -50,9 +50,9 @@ gh run watch                     # follow the run in progress
 
 If a run fails, the site keeps serving the last successful deploy — nothing is
 torn down by a failed build. Fix the source, push again, and the next run
-replaces it. Note that the workflow runs a plain `mkdocs build`, not a strict
-one, so a broken internal link or a missing image will deploy rather than fail
-the run — run `mkdocs build --strict` locally before pushing.
+replaces it. The workflow builds with `mkdocs build --strict`, so a broken
+internal link or a missing image fails the run and is never published — run
+`mkdocs build --strict` locally to catch that before pushing.
 
 Concurrent runs are serialised on a `pages` group and are *not* cancelled
 in-progress, so two merges in quick succession deploy in order rather than
