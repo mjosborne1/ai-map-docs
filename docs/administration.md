@@ -1,12 +1,12 @@
 # Administration
 
-Administrative functions are available to users with the **Admin** role. Open the **User Administration** dialog from the toolbar to manage users and perform maintenance tasks.
+Administrative functions are available to users with the **Admin** role. Open the **Administration** dialog from the toolbar to manage users and perform maintenance tasks. The dialog opens on the **Users** tab; a second **Suggestion uptake** tab reports where chosen target codes came from.
 
 Site-wide admin access (this page) is separate from the per-project **Owner / Author / Reviewer / Reader** roles described in [Project roles](workflow/version-management.md#project-roles) — an admin can manage any user account, but still needs a project role to work on a specific mapping project.
 
 ## Managing user accounts
 
-The **User Administration** dialog lists every user who has logged into AI-Map, with their name, email, login provider, last login time, and account **Status**. Search by name or email to find a specific user.
+The **Users** tab of the **Administration** dialog lists every user who has logged into AI-Map, with their name, email, login provider, last login time, and account **Status**. Search by name or email to find a specific user.
 
 Every account is in one of three states:
 
@@ -23,7 +23,7 @@ For each user you can:
 
 You cannot disable your own account, to prevent accidentally locking yourself out.
 
-<!-- TODO screenshot 60-AdminPendingApproveReject.png — the User Administration dialog with a
+<!-- TODO screenshot 60-AdminPendingApproveReject.png — the Administration dialog with a
      Pending row showing its blue badge and the green Approve / red Reject buttons, alongside
      an Active row for contrast. Needs a real pending registration to stage.
      TODO screenshot (optional) 61-RejectConfirm.png — the Reject confirmation dialog. -->
@@ -69,6 +69,40 @@ emails and expect to be, ask whoever maintains the deployment to check the mail 
 
 ---
 
+## Suggestion uptake
+
+The **Suggestion uptake** tab answers a different question from the rest of this dialog: when a
+mapper settled on a target code, where did that code come from? It counts across every project
+— which is why it is admin-only — and gives a read on how well the agent's suggestions are
+landing as new users are onboarded.
+
+Pick a **From** and, optionally, a **To** date and click **Refresh**. **To** is inclusive:
+selections made on that day are counted. **From** defaults to the day the recording was first
+shipped (in 0.11.0), because anything chosen before that carries no source and would only drag
+the numbers down.
+
+![Suggestion uptake tab of the Administration dialog](images/workflow/67-SuggestionUptake.png)
+
+*The **Suggestion uptake** tab. The line above the table reports coverage — how many of the
+chosen target codes in the window recorded where they came from — and the table breaks those
+down by source.*
+
+The breakdown counts four sources:
+
+| Source | Meaning |
+| ------ | ------- |
+| **Agent's suggestion** | The mapper accepted the code the agent proposed as its best match. |
+| **Agent's alternative** | The mapper picked one of the other candidates the agent offered. |
+| **Broader value set search** | The mapper searched the wider value set to find the code. |
+| **Concept hierarchy browser** | The mapper browsed the concept hierarchy to find the code. |
+
+Absolute counts are shown alongside the percentages on purpose: a 60/40 split over ten
+selections is a thin sample, not a finding. The coverage line is there for the same reason —
+codes chosen before the recording shipped, or from an older client, carry no recognised source
+and are excluded from the breakdown but still named in the count.
+
+---
+
 ## Managing context bindings
 
 Context bindings are the shared list of FHIR contexts offered when a project is created (see
@@ -93,10 +127,10 @@ with those controls in place.*
 
 AI-Map caches terminology lookups (concept displays, properties, and value set membership) to speed up automap and the mapping table. If the underlying terminology server is updated — for example when a code system version changes or a concept is retired — the cache can hold stale results.
 
-Click **Clear Concept Cache** in the User Administration dialog to purge all cached terminology lookups. Subsequent lookups are re-fetched fresh from the terminology server.
+Click **Clear Concept Cache** at the foot of the Administration dialog to purge all cached terminology lookups. Subsequent lookups are re-fetched fresh from the terminology server.
 
-![Clear Concept Cache button in User Administration](images/workflow/51-AdminClearConceptCache.png)
+![Clear Concept Cache button in the Administration dialog](images/workflow/51-AdminClearConceptCache.png)
 
-*The **Clear Concept Cache** button in the User Administration dialog purges stale terminology lookups. Use it after a terminology server update, or if displays or value set membership appear out of date.*
+*The **Clear Concept Cache** button in the Administration dialog purges stale terminology lookups. Use it after a terminology server update, or if displays or value set membership appear out of date.*
 
 Clearing the cache is safe: it does not affect any mappings, project data, or user accounts. The first few lookups after clearing may be slightly slower while the cache is repopulated.
