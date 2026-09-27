@@ -144,8 +144,9 @@ If a version was finalised in error, the project owner can click **Reopen** in t
 
 Reopening is recorded permanently. The version keeps a **Reopened** badge, with the date it was reopened in its tooltip, because anything already exported or published from it may no longer match after further edits. Prefer uploading a new version when the finalised map has already been published; reopen only to correct a version that should not have been finalised.
 
-<!-- TODO screenshot 68-ReopenedBadge.png — the Versions dialog after reopening, showing the
-     version back in REVIEWED with its amber Reopened badge. -->
+![Reopened version](../images/workflow/68-ReopenedBadge.png)
+
+*Version `v1` after reopening: back in **REVIEWED**, with the amber **Reopened** badge beside its status. The label and release date are editable again, and the owner can **Finalise** it again once the correction is made, or **Send Back** for further work.*
 
 ### Editing a version label
 
