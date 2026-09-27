@@ -18,7 +18,9 @@ Click **Upload File** in the project toolbar. Because the project already has a 
 
 ![Upload Source File — version options](../images/workflow/36-ImportSourceV2.png)
 
-*Choose **Create a new version** and enter a version name (e.g. `v2`). Existing mappings are carried over by source code. **Replace current version** discards all existing mappings — use with caution.*
+*Choose **Create a new version** and enter a version name (e.g. `v2`). Existing mappings are carried over by source code, and the finalised `v1` is left unchanged. **Replace current version** is greyed out because `v1` is finalised; an owner would have to [reopen it](version-management.md#reopening-a-finalised-version) first.*
+
+**Replace current version** is only available while the current version is not finalised. It discards all existing mappings in that version, so use it with caution.
 
 Click **Continue →**.
 

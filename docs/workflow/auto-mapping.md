@@ -20,6 +20,17 @@ A progress indicator shows processing in real time. You can click **Stop** at an
 
 *Automap processing 25 of 41 codes. Results appear in the table as each code is matched.*
 
+Only one automap run can happen on a project at a time. If a colleague (or another tab) is already running automap on the same project, a second run is refused with *"Automap is already running on this project"*. Wait for the first run to finish, then try again.
+
+Automap cannot run on a [finalised version](version-management.md#marking-as-reviewed-and-finalising).
+
+!!! note "Hourly limit"
+    Each user can automap up to **32,000 rows per hour**, across all projects. A run that is
+    refused (for example because automap is already running) does not count toward it. If you
+    reach the limit, you will see *"Too many requests — please wait a moment and try again."*
+    The limit is far above a normal day's mapping; wait for the hour to roll over and re-run
+    automap on the codes still unmapped.
+
 ---
 
 ## Reviewing the automap log

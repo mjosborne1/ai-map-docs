@@ -8,12 +8,12 @@ The workflow moves a local code through six stages, from raw ingestion to a mapp
 2. AI auto-match to standard concepts (SNOMED CT or LOINC).
 3. Review proposed mappings.
 4. Publish approved mappings and version them.
-5. Export for use in LIS/EMR, or as a FHIR ConceptMap.
+5. Export for use in LIS/EMR, or as a FHIR R4 package (CodeSystem, ValueSet and ConceptMap).
 6. Upload the ConceptMap to a FHIR server (manual step, outside AI-Map).
 
 ![Mapping workflow](images/workflow/example-mapping-workflow.svg)
 
-*Steps 1–5 (blue/teal) happen inside AI-Map. Step 6 (dashed) is manual — see [Publishing the FHIR ConceptMap](workflow/exporting.md#publishing-the-fhir-conceptmap).*
+*Steps 1–5 (blue/teal) happen inside AI-Map. Step 6 (dashed) is manual — see [Loading the package into a terminology server](workflow/exporting.md#loading-the-package-into-a-terminology-server).*
 
 ---
 
@@ -28,4 +28,4 @@ The workflow moves a local code through six stages, from raw ingestion to a mapp
 | Submit for review, approve, and finalise | [Version Management & Review](workflow/version-management.md) |
 | Import an updated source file as a new version | [Updating Source Data](workflow/updating-source.md) |
 | Export the completed mapping | [Exporting](workflow/exporting.md) |
-| Publish a FHIR ConceptMap to a terminology server (manual) | [Publishing the FHIR ConceptMap](workflow/exporting.md#publishing-the-fhir-conceptmap) |
+| Load the FHIR R4 package into a terminology server (manual) | [Loading the package into a terminology server](workflow/exporting.md#loading-the-package-into-a-terminology-server) |

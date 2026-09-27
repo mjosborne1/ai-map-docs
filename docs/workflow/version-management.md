@@ -6,7 +6,7 @@ Access to a project is controlled by per-project roles, assigned from the **Memb
 
 | Role | Can do |
 | ---- | ------ |
-| **Owner** | Everything — edit mappings, run automap, upload, manage members, finalise versions, delete or archive the project. |
+| **Owner** | Everything — edit mappings, run automap, upload, manage members, finalise and reopen versions, delete or archive the project. |
 | **Author** | Read and edit mappings (relationship, target overrides, note, reasoning, flag), run automap, upload source files. Cannot set a mapping's status to a reviewer-only value. |
 | **Reviewer** | Read and export everything; can change a mapping's status (e.g. Draft → Mapped) but not its relationship, target overrides, note, or reasoning. |
 | **Reader** | Read-only — can view mappings, versions, exports, the audit history, and concept lookups, but cannot edit a mapping, run automap, upload a file, or post a comment. |
@@ -128,13 +128,28 @@ The project owner clicks **Finalise** to lock the version.
 
 ![Finalise confirmation](../images/workflow/32-FinaliseVersion.png)
 
-*A confirmation dialog appears before finalising. A finalised version cannot be edited.*
+*A confirmation dialog appears before finalising. A finalised version is locked against edits.*
 
-The version status becomes **Final** — it is now read-only and ready for export.
+The version status becomes **Final**. It is now locked and ready for export.
 
 ![Final status](../images/workflow/33-FinalStatus.png)
 
-*Version `v1` is FINAL and marked Active. No further changes can be made to this version.*
+*Version `v1` is FINAL and marked Active. The owner sees a **Reopen** button in case the version was finalised in error.*
+
+A finalised version refuses every change to its mappings: automap, clearing automap results, editing a mapping, bulk actions, and replacing its source file. **Validate map** still works, so a target code that is later retired in the terminology still shows up. To change the source codes of a finalised map, [upload the file as a new version](updating-source.md): its mappings are carried across and the finalised version is left unchanged.
+
+### Reopening a finalised version
+
+If a version was finalised in error, the project owner can click **Reopen** in the Versions dialog. After confirming, the version returns to **Reviewed** and becomes editable again.
+
+Reopening is recorded permanently. The version keeps a **Reopened** badge, with the date it was reopened in its tooltip, because anything already exported or published from it may no longer match after further edits. Prefer uploading a new version when the finalised map has already been published; reopen only to correct a version that should not have been finalised.
+
+<!-- TODO screenshot 68-ReopenedBadge.png — the Versions dialog after reopening, showing the
+     version back in REVIEWED with its amber Reopened badge. -->
+
+### Editing a version label
+
+The label of a version is edited in place in the Versions dialog. Type the new label and click the **Save** button beside it; the label is not saved until you do.
 
 The full lifecycle is visible in the History panel.
 
