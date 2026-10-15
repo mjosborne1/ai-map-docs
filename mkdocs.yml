@@ -5,8 +5,8 @@ site_url: https://mjosborne1.github.io/ai-map-docs/
 
 theme:
   name: material
-  logo: images/csiro-logo-small.png
-  favicon: images/csiro-logo-small.png
+  logo: images/logo.png
+  favicon: images/favicon.ico
   palette:
     - scheme: default
       primary: custom
